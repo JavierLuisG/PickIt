@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "../navbar/page.module.css";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -6,17 +9,13 @@ const Navbar = () => {
       <div className={styles.navbar_container}>
         Pick It
         <ul className={styles.options_navbar}>
-          <li>
-            Home
+          <li><Link href="/">Inicio</Link>
           </li>
-          <li>
-            Contact
+          <li><Link href="/contact">Contacto</Link>
           </li>
-          <li>
-            Favs
+          <li><Link href="/">Carrito</Link>
           </li>
-          <li>
-            Login
+          <li><Link href="/">Ingresar</Link>
           </li>
         </ul>
       </div>

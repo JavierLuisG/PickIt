@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ContextGlobalProvider } from "./context/globalContext";
+import { ContextGlobalProvider } from "../context/globalContext";
+import Navbar from "../components/navbar/page";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "PickIt",
-  description: "PickIt",
+  description: "Sistema de prueba para PickIt",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ContextGlobalProvider>
+          <Navbar />
           {children}
         </ContextGlobalProvider>
       </body>
