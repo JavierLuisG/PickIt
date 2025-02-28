@@ -3,7 +3,7 @@ export interface State {
 }
 export const initialState: State = {}
 
-export interface Action<T = any> {
+export interface Action<T = unknown> {
   type: string;
   payload?: T;
 }
