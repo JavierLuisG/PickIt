@@ -2,6 +2,7 @@
 
 import styles from "../navbar/page.module.css";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   return (
@@ -23,13 +24,13 @@ const Navbar = () => {
           </ul>
           <div className={styles.icons_navbar}>
             <Link className={styles.link_icons} href="/login">
-              <img className={styles.icons} src="/profile.svg" alt="login" />
+              <Image width={25} height={25} src="/profile.svg" alt="login" />
             </Link>
             <Link className={styles.link_icons} href="/">
-              <img className={styles.icons} src="/favorite.svg" alt="favs" />
+              <Image width={25} height={25} src="/favorite.svg" alt="favs" />
             </Link>
             <Link className={styles.link_icons} href="/">
-              <img className={styles.icons} src="/cart.svg" alt="favs" />
+              <Image width={25} height={25} src="/cart.svg" alt="favs" />
             </Link>
           </div>
         </div>

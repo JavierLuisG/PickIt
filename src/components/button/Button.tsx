@@ -12,7 +12,7 @@ interface ButtonProps {
   theme: boolean;
 }
 
-const page = ({ children, onClick, type, href, className, theme }: ButtonProps) => {
+const Button = ({ children, onClick, type, href, className, theme }: ButtonProps) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -37,4 +37,4 @@ const page = ({ children, onClick, type, href, className, theme }: ButtonProps) 
   )
 }
 
-export default page
+export default Button

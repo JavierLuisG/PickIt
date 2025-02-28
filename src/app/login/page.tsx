@@ -1,8 +1,6 @@
 import styles from "../login/page.module.css";
-import Button from "../../components/button/page";
+import Button from "../../components/button/Button";
 import Link from "next/link";
-
-
 
 const page = () => {
   return (
