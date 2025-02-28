@@ -1,11 +1,11 @@
 export interface State {
-  [key: string]: any;
+  [key: string]: string | number | boolean | object | null | undefined;
 }
 export const initialState: State = {}
 
-export interface Action {
+export interface Action<T = any> {
   type: string;
-  payload?: any;
+  payload?: T;
 }
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
