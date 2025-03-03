@@ -10,9 +10,10 @@ interface ButtonProps {
   type?: "button" | "submit" | "reset";
   className?: string;
   theme: boolean;
+  disabled?: boolean;
 }
 
-const Button = ({ children, onClick, type, href, className, theme }: ButtonProps) => {
+const Button = ({ children, onClick, type, href, className, theme, disabled }: ButtonProps) => {
   const router = useRouter();
 
   const handleClick = () => {
@@ -25,16 +26,15 @@ const Button = ({ children, onClick, type, href, className, theme }: ButtonProps
   };
 
   return (
-    <>
-      <button
-        className={`${styles.btn} ${theme ? styles.light : styles.dark} ${className}`}
-        onClick={handleClick}
-        type={type}
-      >
-        {children}
-      </button>
-    </>
-  )
-}
+    <button
+      className={`${styles.btn} ${theme ? styles.light : styles.dark} ${className}`}
+      onClick={handleClick}
+      type={type}
+      disabled={disabled}
+    >
+      {children}
+    </button>
+  );
+};
 
-export default Button
+export default Button;
