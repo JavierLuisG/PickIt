@@ -4,7 +4,7 @@ import styles from "../login/page.module.css";
 import inputStyles from "../shared/authInput.module.css";
 import Button from "../../components/button/Button";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 interface UserCredentials {
@@ -20,14 +20,7 @@ const Page: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
-  useEffect(() => {
-    if (user) {
-      console.log("Está renderizandose");
-      login();
-    }
-  }, [user]);
-
-  const login = async () => {
+  const login = useCallback(async () => {
     try {
       const response = await fakeApi(email, password);
       if (response.success) {
@@ -35,12 +28,19 @@ const Page: React.FC = () => {
       } else {
         setError("Credenciales incorrectas.");
       }
-    } catch (err) {
+    } catch (_) {
       setError("Error en el servidor. Inténtalo de nuevo más tarde.");
     } finally {
       setLoading(false);
     }
-  }
+  }, [email, password, router]);
+
+  useEffect(() => {
+    if (user) {
+      console.log("Está renderizandose");
+      login();
+    }
+  }, [user, login]);
 
   const fakeApi = (email: string, password: string) => {
     return new Promise<{ success: boolean }>((resolve) => {
@@ -56,13 +56,17 @@ const Page: React.FC = () => {
 
   const capitalizeEmail = (data: string): string | null => {
     let toCapitalize = null;
-    data && (toCapitalize = data.slice().trim().toLowerCase());
+    if (data) {
+      (toCapitalize = data.slice().trim().toLowerCase());
+    }
     return toCapitalize;
   };
 
   const capitalizePassword = (data: string): string | null => {
     let encodedStringToBtoA = null;
-    data && (encodedStringToBtoA = btoa(data));
+    if (data) {
+      (encodedStringToBtoA = btoa(data));
+    }
     return encodedStringToBtoA;
   };
 
@@ -72,7 +76,7 @@ const Page: React.FC = () => {
   };
 
   const onChange = (
-    e: React.ChangeEvent<HTMLInputElement>, 
+    e: React.ChangeEvent<HTMLInputElement>,
     setData: React.Dispatch<React.SetStateAction<string>>,
     capitalize: (data: string) => string | null
   ) => {
