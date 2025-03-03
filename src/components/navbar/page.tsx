@@ -24,7 +24,7 @@ const Navbar = () => {
           </ul>
           <div className={styles.icons_navbar}>
             <Link className={styles.link_icons} href="/login">
-              <Image width={25} height={25} src="/profile.svg" alt="login" />
+              <Image width={20} height={20} src="/profile.svg" alt="login" />
             </Link>
             <Link className={styles.link_icons} href="/">
               <Image width={25} height={25} src="/favorite.svg" alt="favs" />

@@ -1,5 +1,6 @@
 :root {
   --color-btn-principal: rgb(58, 77, 141);
+  --color-border-login: rgb(197, 194, 194);
 }
 
 * {

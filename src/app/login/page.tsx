@@ -1,39 +1,52 @@
+"use client";
+
 import styles from "../login/page.module.css";
+import inputStyles from "../shared/authInput.module.css";
 import Button from "../../components/button/Button";
 import Link from "next/link";
 
-const page = () => {
+const Page: React.FC = () => {
   return (
     <>
-      <div className={styles.login_container}>
-        <div>
-          <h1>Accede a todos nuestros productos</h1>
-          <h2>A un solo click!</h2>
-        </div>
-        <div className={styles.login}>
-          <form className={styles.form_login}>
-            <div className={styles.input_label}>
-              <label htmlFor="email">Correo:</label>
-              <input className={styles.input} id="email" type="email" required />
-            </div>
-            <div className={styles.input_label}>
-              <label htmlFor="password">Contraseña:</label>
-              <input className={styles.input} id="password" type="password" required />
-            </div>
-            <div className={styles.tyc}>
-              <input type="checkbox" id="tyc"/>
-              <label htmlFor="tyc">Acertar términos y condiciones</label>
+      <section className={`${styles.mq_container} ${inputStyles.container}`}>
+        <article className={styles.title_container}>
+          <h1>Todo lo que necesitas</h1>
+          <h2>En un solo lugar.</h2>
+        </article>
+        <article className={inputStyles.auth_container}>
+          <form className={inputStyles.form}>
+            <div className={inputStyles.inputs_container}>
+              <div className={inputStyles.input_label}>
+                <label htmlFor="email">Correo:</label>
+                <input
+                  className={inputStyles.input}
+                  id="email"
+                  type="email"
+                  autoComplete="email"
+                  required />
+              </div>
+              <div className={inputStyles.input_label}>
+                <label htmlFor="password">Contraseña:</label>
+                <input
+                  className={inputStyles.input}
+                  id="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required />
+              </div>
             </div>
             <Button type="submit" theme={false}>Ingresar</Button>
             <Link className={styles.recover} href={"/"}>
               ¿Olvidaste tu contraseña?
             </Link>
-            <Button href="/contact" theme={false}>Registrate</Button>
+            <Link href="/register">
+              <Button theme={false}>Registrate</Button>
+            </Link>
           </form>
-        </div>
-      </div>
+        </article>
+      </section>
     </>
   )
-}
+};
 
-export default page
+export default Page;
