@@ -28,7 +28,8 @@ const Page: React.FC = () => {
       } else {
         setError("Credenciales incorrectas.");
       }
-    } catch (_) {
+    } catch (error) {
+      console.log(error);
       setError("Error en el servidor. Inténtalo de nuevo más tarde.");
     } finally {
       setLoading(false);
