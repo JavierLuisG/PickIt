@@ -7,12 +7,8 @@ export const encodePassword = (data: string): string => {
 };
 
 export const formatText = (data: string): string => {
-  let toCapitalize = data[0].toUpperCase() + data.slice(1).toLowerCase();
-  return toCapitalize.split(" ").map(word => {
-    if (word.length > 0) {
-      return word[0].toUpperCase() + word.slice(1).toLowerCase();
-    }
-    return '';
+  return data.trim().toLowerCase().split(" ").map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
   }).join(" ");
 };
 
