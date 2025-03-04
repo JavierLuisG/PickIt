@@ -6,6 +6,7 @@ import Button from "../../components/button/Button";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { validateEmail, capitalizeEmail, capitalizePassword, fakeApi } from "../../utils/authUtils";
 
 interface UserCredentials {
   email: string;
@@ -20,12 +21,14 @@ const Page: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
-  const login = useCallback(async () => {
+  const login = async (user: UserCredentials) => {
     try {
       const response = await fakeApi(email, password);
       if (response.success) {
         router.push("/"); // todo: por ahora redirige al home
+        localStorage.setItem("user", JSON.stringify(user));
       } else {
+        localStorage.removeItem("user");
         setError("Credenciales incorrectas.");
       }
     } catch (error) {
@@ -34,47 +37,13 @@ const Page: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [email, password, router]);
+  };
 
   useEffect(() => {
     if (user) {
-      console.log("Está renderizandose");
-      login();
+      login(user);
     }
-  }, [user, login]);
-
-  const fakeApi = (email: string, password: string) => {
-    return new Promise<{ success: boolean }>((resolve) => {
-      setTimeout(() => {
-        if (email === "javier@gmail.com" && password === "MTIz") {
-          resolve({ success: true });
-        } else {
-          resolve({ success: false });
-        }
-      }, 1000);
-    });
-  };
-
-  const capitalizeEmail = (data: string): string | null => {
-    let toCapitalize = null;
-    if (data) {
-      (toCapitalize = data.slice().trim().toLowerCase());
-    }
-    return toCapitalize;
-  };
-
-  const capitalizePassword = (data: string): string | null => {
-    let encodedStringToBtoA = null;
-    if (data) {
-      (encodedStringToBtoA = btoa(data));
-    }
-    return encodedStringToBtoA;
-  };
-
-  const validateEmail = (email: string) => {
-    const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return validation.test(email);
-  };
+  }, [user]);
 
   const onChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -94,19 +63,8 @@ const Page: React.FC = () => {
       setLoading(false);
       return;
     }
-    setUser(buildData({ email: email, password: password }));
+    setUser({ email, password });
   };
-
-  const buildData = (data: UserCredentials): UserCredentials | null => {
-    let build = null;
-    if (data) {
-      build = {
-        email: data.email,
-        password: data.password,
-      }
-    }
-    return build;
-  }
 
   return (
     <section className={`${styles.mq_container} ${inputStyles.container}`}>
