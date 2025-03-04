@@ -45,7 +45,7 @@
 }
 
 .input {
-  border: 1px solid var(--color-border-login);
+  border: 1px solid rgb(158, 156, 156);
   border-radius: 5px;
   height: 2em;
   padding: 0px 6px;
