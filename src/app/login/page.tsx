@@ -4,9 +4,9 @@ import styles from "../login/page.module.css";
 import inputStyles from "../shared/authInput.module.css";
 import Button from "../../components/button/Button";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { validateEmail, capitalizeEmail, capitalizePassword, fakeApi } from "../../utils/authUtils";
+import { validateEmail, formatInput, encodePassword, fakeApi } from "../../utils/authUtils";
 
 interface UserCredentials {
   email: string;
@@ -16,14 +16,13 @@ interface UserCredentials {
 const Page: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [user, setUser] = useState<UserCredentials | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
   const login = async (user: UserCredentials) => {
     try {
-      const response = await fakeApi(email, password);
+      const response = await fakeApi(user.email, user.password);
       if (response.success) {
         router.push("/"); // todo: por ahora redirige al home
         localStorage.setItem("user", JSON.stringify(user));
@@ -39,31 +38,21 @@ const Page: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    if (user) {
-      login(user);
-    }
-  }, [user]);
-
-  const onChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    setData: React.Dispatch<React.SetStateAction<string>>,
-    capitalize: (data: string) => string | null
-  ) => {
-    const data = e.target.value;
-    setData(capitalize(data) || "");
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
-    if (!validateEmail(email)) {
+
+    const formattedEmail = formatInput(email);
+    const encodedPassword = encodePassword(password);
+
+    if (!validateEmail(formattedEmail)) {
       setError("Correo electrónico inválido.");
       setLoading(false);
       return;
     }
-    setUser({ email, password });
+
+    login({ email: formattedEmail, password: encodedPassword });
   };
 
   return (
@@ -82,7 +71,7 @@ const Page: React.FC = () => {
                 id="email"
                 type="email"
                 autoComplete="email"
-                onChange={(e) => onChange(e, setEmail, capitalizeEmail)}
+                onChange={(e) => setEmail(e.target.value)}
                 required />
             </div>
             <div className={inputStyles.input_label}>
@@ -92,7 +81,7 @@ const Page: React.FC = () => {
                 id="password"
                 type="password"
                 autoComplete="current-password"
-                onChange={(e) => onChange(e, setPassword, capitalizePassword)}
+                onChange={(e) => setPassword(e.target.value)}
                 required />
             </div>
           </div>

@@ -1,21 +1,17 @@
-export const validateEmail = (email: string) => {
+export const validateEmail = (email: string): boolean => {
   const validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return validation.test(email);
 };
 
-export const capitalizeEmail = (data: string) => {
-  let toCapitalize = null;
-  data && (toCapitalize = data.slice().trim().toLowerCase());
-  return toCapitalize;
+export const formatInput = (data: string): string => {
+  return data.trim().toLowerCase();
 };
 
-export const capitalizePassword = (data: string) => {
-  let encodedStringToBtoA = null;
-  data && (encodedStringToBtoA = btoa(data));
-  return encodedStringToBtoA;
+export const encodePassword = (data: string): string => {
+  return btoa(data);
 };
 
-export const fakeApi = (email: string, password: string) => {
+export const fakeApi = (email: string, password: string): Promise<{ success: boolean }>  => {
   return new Promise<{ success: boolean }>((resolve) => {
     setTimeout(() => {
       if (email === "javier@gmail.com" && password === "MTIz") {
