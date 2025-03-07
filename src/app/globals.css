@@ -1,6 +1,10 @@
 :root {
   --color-btn-principal: rgb(70, 98, 177);
   --color-border-login: rgb(197, 194, 194);
+  --color-title-principal: rgb(51, 48, 48);
+  --color-title-secondary: rgb(75, 75, 75);
+  --color-bg-secondary-dark: rgba(64, 16, 126, 0.767);
+  --color-bg-secondary-light: rgba(91, 75, 112, 0.795);
 }
 
 * {

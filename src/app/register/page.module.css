@@ -5,13 +5,13 @@
 .title_container h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgb(51, 48, 48);
+  color: var(--color-title-principal);
 }
 
 .title_container h2 {
   font-size: 1.7rem;
   font-weight: 400;
-  color: rgb(75, 75, 75);
+  color: var(--color-title-secondary);
 }
 
 .tyc {

@@ -1,0 +1,57 @@
+.footer_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_header {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  background-color: var(--color-bg-secondary-dark);
+
+  & span {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+  }
+}
+
+.body_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 3em;
+  width: 100%;
+  background-color: var(--color-bg-secondary-light);
+}
+
+.info_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1em;
+  gap: 2em;
+}
+
+.text_info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.4em;
+
+  &>span {
+    color: white;
+    font-size: 1.1em;
+  }
+}
+
+.networks_contact {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.img {
+  width: 20px;
+  fill-opacity: var(--secondary-color);
+}
