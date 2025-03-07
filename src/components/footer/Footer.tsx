@@ -7,13 +7,13 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer_container}`}>
       <section className={`${styles.footer_header}`}>
-        <span>Powered by PickIt</span>
+        <span className={`${styles.span_header}`}>Powered by PickIt</span>
       </section>
       <section className={`${styles.body_container}`}>
         <div className={`${styles.info_container}`}>
           <article className={`${styles.text_info}`}>
-            <span>© 2025 - Javier Luis</span>
-            <span>Todos los derechos reservados.</span>
+            <span className={`${styles.span_text_info}`}>© 2025 - Javier Luis</span>
+            <span className={`${styles.span_text_info}`}>Todos los derechos reservados.</span>
           </article>
           <article className={`${styles.networks_contact}`}>
             <Link
