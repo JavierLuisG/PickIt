@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer_container}`}>
       <section className={`${styles.footer_header}`}>
-        <span>Powered by</span>
+        <span>Powered by PickIt</span>
       </section>
       <section className={`${styles.body_container}`}>
         <div className={`${styles.info_container}`}>
@@ -21,14 +21,14 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className={`${styles.img}`} src="/linkedin.svg" alt="" />
+              <img className={`${styles.img}`} src="/linkedin.svg" alt="LinkedIn" />
             </Link>
             <Link
               href="https://github.com/JavierLuisG"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img className={`${styles.img}`} src="/github.svg" alt="" />
+              <img className={`${styles.img}`} src="/github.svg" alt="GitHub" />
             </Link>
           </article>
         </div>

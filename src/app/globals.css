@@ -5,6 +5,8 @@
   --color-title-secondary: rgb(75, 75, 75);
   --color-bg-secondary-dark: rgba(64, 16, 126, 0.767);
   --color-bg-secondary-light: rgba(91, 75, 112, 0.795);
+  --color-primary: #4a148c;
+  --color-primary-hover: #7b1fa2;
 }
 
 * {
