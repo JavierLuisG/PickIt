@@ -1,19 +1,19 @@
 .container {
-  padding: 3em 1em;
+  padding: 4em 2em;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 75vh;
-  gap: 2em;
+  gap: 3em;
 }
 
 .auth_container {
   padding: 1em;
   border: 1px solid var(--color-border-login);
   border-radius: 8px;
-  width: 20em;
+  width: 18em;
 }
 
 .auth_container:hover {

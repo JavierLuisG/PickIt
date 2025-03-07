@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.css";
-import inputStyles from "../shared/authInput.module.css"
+import inputStyles from "../shared/authInput.module.css";
 import Button from "../../components/button/Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -113,7 +113,7 @@ const Page: React.FC = () => {
                 />
               </div>
               <div className={inputStyles.input_label}>
-                <label htmlFor="text">Teléfono</label>
+                <label htmlFor="text">Teléfono:</label>
                 <input
                   className={inputStyles.input}
                   id="phone"
@@ -124,7 +124,7 @@ const Page: React.FC = () => {
                 />
               </div>
               <div className={inputStyles.input_label}>
-                <label htmlFor="password">Contraseña</label>
+                <label htmlFor="password">Contraseña:</label>
                 <input
                   className={inputStyles.input}
                   id="password"
@@ -135,7 +135,7 @@ const Page: React.FC = () => {
                 />
               </div>
               <div className={inputStyles.input_label}>
-                <label htmlFor="password">Confirmar contraseña</label>
+                <label htmlFor="password">Confirmar contraseña:</label>
                 <input
                   className={inputStyles.input}
                   id="confirm_password"
