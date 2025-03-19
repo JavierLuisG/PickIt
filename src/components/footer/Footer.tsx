@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer_container}`}>
       <section className={`${styles.footer_header}`}>
-        <span className={`${styles.span_header}`}>Powered by PickIt</span>
+        <span className={`${styles.span_header}`}>Powered by</span>
       </section>
       <section className={`${styles.body_container}`}>
         <div className={`${styles.info_container}`}>

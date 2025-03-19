@@ -8,19 +8,20 @@ const Navbar = () => {
   return (
     <>
       <div className={styles.navbar_container}>
-        <h1>
-          <Link href="/">
-            Pick It
-          </Link>
-        </h1>
+        <Link href="/">
+          <Image
+            className={styles.logo_principal}
+            width={135}
+            height={45}
+            src="/images/pickit-logo-horizontal-color.png"
+            alt="logo"
+          />
+        </Link>
         <div className={styles.options_container}>
           <ul className={styles.options_navbar}>
-            <li><Link href="/contact">Nosotros</Link>
-            </li>
-            <li><Link href="/contact">Contáctanos</Link>
-            </li>
-            <li><Link href="/contact">Productos</Link>
-            </li>
+            <li><Link href="/contact">Nosotros</Link></li>
+            <li><Link href="/contact">Contáctanos</Link></li>
+            <li><Link href="/contact">Productos</Link></li>
           </ul>
           <div className={styles.icons_navbar}>
             <Link className={styles.link_icons} href="/login">
@@ -39,4 +40,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
