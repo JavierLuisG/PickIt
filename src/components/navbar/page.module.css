@@ -19,3 +19,25 @@
 .menu_toggle:hover {
   background-color: #E4D4F4;
 }
+
+.menu_toggle:active {
+  background-color: white;
+}
+
+.container_menu_item {
+  width: 100%;
+  border-bottom: 1px solid #E4D4F4;
+}
+
+.text {
+  font-size: 1.05em;
+  font-weight: 500;
+}
+
+.menu_item {
+  padding: 10px;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: black;
+  transition: background-color 0.3s ease-in-out;
+}

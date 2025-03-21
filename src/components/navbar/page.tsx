@@ -30,36 +30,36 @@ const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Inicio",
-    "Ingresar",
-    "Registrate",
-    "Favoritos",
-    "Sobre nosotros",
-    "Contáctanos",
-    "Salir",
+    { name: "Inicio", path: "/" },
+    { name: "Ingresar", path: "/login" },
+    { name: "Registrate", path: "/register" },
+    { name: "Favoritos", path: "/" },
+    { name: "Sobre nosotros", path: "/" },
+    { name: "Contáctanos", path: "/contact" },
+    { name: "Salir", path: "/" },
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} isBordered>
+    <Navbar className="w-full" onMenuOpenChange={setIsMenuOpen} isBordered>
       <NavbarContent>
         <NavbarBrand>
           <PickitLogo />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-5" justify="center">
+      <NavbarContent className="hidden sm:flex gap-6" justify="center">
         <NavbarItem>
-          <Link className="text-bold" color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="#">
             Contacto
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="#">
             Productos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="#">
             Favoritos
           </Link>
         </NavbarItem>
@@ -83,17 +83,16 @@ const NavbarPage = () => {
       />
       <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full"
-              color={
-                index === menuItems.length - 1 ? "danger" : "foreground"
-              }
-              href="#"
-              size="lg"
-            >
-              {item}
-            </Link>
+          <NavbarMenuItem key={`${item.name}-${index}`}>
+            <div className={styles.container_menu_item}>
+              <Link
+                className={styles.menu_item}
+                href={item.path}
+                size="lg"
+              >
+                {item.name}
+              </Link>
+            </div>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>
