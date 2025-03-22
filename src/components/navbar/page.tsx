@@ -40,7 +40,7 @@ const NavbarPage = () => {
   ];
 
   return (
-    <Navbar className="w-full" onMenuOpenChange={setIsMenuOpen} isBordered>
+    <Navbar maxWidth="2xl" onMenuOpenChange={setIsMenuOpen} isBordered>
       <NavbarContent>
         <NavbarBrand>
           <PickitLogo />
