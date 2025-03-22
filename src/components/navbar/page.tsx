@@ -31,10 +31,10 @@ const NavbarPage = () => {
 
   const menuItems = [
     { name: "Inicio", path: "/" },
-    { name: "Ingresar", path: "/login" },
+    { name: "Iniciar sesión", path: "/login" },
     { name: "Registrate", path: "/register" },
-    { name: "Favoritos", path: "/" },
-    { name: "Sobre nosotros", path: "/" },
+    { name: "Favoritos", path: "/favorites" },
+    { name: "Sobre nosotros", path: "/aboutUs" },
     { name: "Contáctanos", path: "/contact" },
     { name: "Salir", path: "/" },
   ];
@@ -49,17 +49,17 @@ const NavbarPage = () => {
 
       <NavbarContent className="hidden sm:flex gap-6" justify="center">
         <NavbarItem>
-          <Link className={styles.text} color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="/contact">
             Contacto
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className={styles.text} color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="/products">
             Productos
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link className={styles.text} color="foreground" href="#">
+          <Link className={styles.text} color="foreground" href="/favorites">
             Favoritos
           </Link>
         </NavbarItem>
@@ -73,7 +73,7 @@ const NavbarPage = () => {
             color="secondary"
             href="/login"
           >
-            Ingresar
+            Iniciar sesión
           </Button>
         </NavbarItem>
       </NavbarContent>
