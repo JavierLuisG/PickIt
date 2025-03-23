@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div className={`${styles.contact_info}`}>
               <p>contacto@pickit.com</p>
-              <p>(+57) 320 945 5269</p>
+              <p>(+57) 320 9455269</p>
               <p>Bogotá, Colombia</p>
             </div>
             <div className={`${styles.networks_contact}`}>
