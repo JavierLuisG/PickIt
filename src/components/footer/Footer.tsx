@@ -27,12 +27,11 @@ const Footer = () => {
           <article className={`${styles.column}`}>
             <div>
               <p><b>¿Tienes alguna pregunta?</b></p>
-              <p><b>¡Contáctanos!</b></p>
+              <p><b>¿Te gustaría saber más?</b></p>
             </div>
-            <div className={`${styles.contact_info}`}>
-              <p>contacto@pickit.com</p>
-              <p>(+57) 320 9455269</p>
-              <p>Bogotá, Colombia</p>
+            <div>
+              <p>Explora, descubre y</p>
+              <p>¡Contáctanos!</p>
             </div>
             <div className={`${styles.networks_contact}`}>
               <Link
