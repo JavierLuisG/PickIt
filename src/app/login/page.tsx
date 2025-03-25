@@ -1,12 +1,11 @@
 "use client";
 
 import styles from "../login/page.module.css";
-import inputStyles from "../shared/authInput.module.css";
-import Button from "../../components/button/Button";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { validateEmail, formatInput, encodePassword, fakeApi } from "../../utils/authUtils";
+import { Button } from "@heroui/react";
 
 interface UserCredentials {
   email: string;
@@ -56,47 +55,62 @@ const Page: React.FC = () => {
   };
 
   return (
-    <section className={`${styles.mq_container} ${inputStyles.container}`}>
-      <article className={styles.title_container}>
-        <h1>Todo lo que necesitas</h1>
-        <h2>En un solo lugar.</h2>
-      </article>
-      <article className={inputStyles.auth_container}>
-        <form className={inputStyles.form} onSubmit={handleSubmit}>
-          <div className={inputStyles.inputs_container}>
-            <div className={inputStyles.input_label}>
-              <label htmlFor="email">Correo:</label>
-              <input
-                className={inputStyles.input}
-                id="email"
-                type="email"
-                autoComplete="email"
-                onChange={(e) => setEmail(e.target.value)}
-                required />
-            </div>
-            <div className={inputStyles.input_label}>
-              <label htmlFor="password">Contraseña:</label>
-              <input
-                className={inputStyles.input}
-                id="password"
-                type="password"
-                autoComplete="current-password"
-                onChange={(e) => setPassword(e.target.value)}
-                required />
-            </div>
+    <section className={`${styles.container}`}>
+      <div className={`${styles.login_container}`}>
+        <article className={`${styles.column1}`}>
+          <img src="/images/img_market.jpg" alt="login img" />
+        </article>
+        <article className={styles.column2}>
+          <div className={styles.title}>
+            <p>TU ACCESO SEGURO</p>
           </div>
-          <Button type="submit" theme={false} disabled={loading}>
-            {loading ? "Cargando..." : "Ingresar"}
-          </Button>
-          {error && <p className={styles.error}>{error}</p>}
-          <Link className={styles.recover} href={"/"}>
-            ¿Olvidaste tu contraseña?
-          </Link>
-          <Link href="/register">
-            <Button theme={false}>Registrate</Button>
-          </Link>
-        </form>
-      </article>
+
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.inputs_container}>
+              <div className={styles.input_label}>
+                <input
+                  className={styles.input}
+                  id="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="Escribe tu correo electrónico"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required />
+              </div>
+              <div className={styles.input_label}>
+                <input
+                  className={styles.input}
+                  id="password"
+                  type="password"
+                  autoComplete="current-password"
+                  placeholder="Escribe tu contraseña"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required />
+              </div>
+            </div>
+            <Link className={styles.recover} href={"/"}>
+              Olvidaste tu contraseña?
+            </Link>
+            <Button
+              className={styles.btn_navbar}
+              radius="full"
+              type="submit"
+              color="secondary"
+              href="/login"
+              disabled={loading}
+            >
+              {loading ? "Cargando..." : "Ingresa a tu cuenta"}
+            </Button>
+            {error && <p className={styles.error}>{error}</p>}
+            <p className={styles.p_register}>
+              Aún no tienes cuenta?
+              <Link className={styles.register} href={"/register"}>
+                Registrate aquí
+              </Link>
+            </p>
+          </form>
+        </article>
+      </div>
     </section>
   )
 };
