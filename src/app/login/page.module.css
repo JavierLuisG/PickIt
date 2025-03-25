@@ -43,12 +43,10 @@
 .title p:first-child {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-text-secondary);
 }
 
 .title p:nth-child(2) {
   font-size: 1rem;
-  color: var(--color-text-secondary);
 }
 
 .form {
@@ -68,10 +66,6 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
-
-  & label {
-    color: var(--color-text-secondary);
-  }
 }
 
 .input {
@@ -93,12 +87,10 @@
   width: auto;
   text-align: center;
   margin: auto;
-  color: var(--color-text-secondary);
 }
 
 .p_register {
   text-align: center;
-  color: var(--color-text-secondary);
 }
 
 .register {

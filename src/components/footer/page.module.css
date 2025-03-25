@@ -40,7 +40,6 @@
 }
 
 .quick_links a {
-  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
@@ -53,11 +52,6 @@
 .networks_contact {
   display: flex;
   gap: 10px;
-}
-
-.p,
-.p b {
-  color: var(--color-text-secondary) !important;
 }
 
 .img {

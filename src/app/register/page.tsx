@@ -1,13 +1,10 @@
 "use client";
 
 import styles from "./page.module.css";
-import inputStyles from "../shared/authInput.module.css";
-import Button from "../../components/button/Button";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { validateEmail, validatePhone, validateText,
-  encodePassword, fakeApi, formatInput, formatText 
-} from "@/utils/authUtils";
+import { validateEmail, validatePhone, validateText, encodePassword, formatInput, formatText, fakeApi } from "@/utils/authUtils";
+import { Button } from "@heroui/react";
 
 interface UserCredentials {
   name: string;
@@ -30,7 +27,7 @@ const Page: React.FC = () => {
     try {
       const response = await fakeApi(user.email, user.password);
       if (response.success) {
-        router.push("/login"); // todo: por ahora redirige al home
+        router.push("/login");
         localStorage.setItem("user", JSON.stringify(user));
       } else {
         localStorage.removeItem("user");
@@ -76,88 +73,98 @@ const Page: React.FC = () => {
     const formattedName = formatText(name);
     const formattedEmail = formatInput(email);
     const encodedPassword = encodePassword(password);
-    
+
     register({ name: formattedName, email: formattedEmail, phone: phone, password: encodedPassword });
   };
 
   return (
-    <>
-      <section className={`${styles.mq_container} ${inputStyles.container}`}>
-        <article className={styles.title_container}>
-          <h1>Únete a nosotros</h1>
-          <h2>Descubre un mundo de posibilidades.</h2>
+    <section className={`${styles.container}`}>
+      <div className={`${styles.register_container}`}>
+        <article className={`${styles.column1}`}>
+          <img src="/images/img_person.jpg" alt="register img" />
         </article>
-        <article className={inputStyles.auth_container}>
-          <form className={inputStyles.form} onSubmit={handleSubmit}>
-            <div className={inputStyles.inputs_container}>
-              <div className={inputStyles.input_label}>
-                <label htmlFor="text">Nombre:</label>
+        <article className={styles.column2}>
+          <div className={styles.title}>
+            <p>Crea tu cuenta</p>
+            <p>Únete a nuestra comunidad</p>
+          </div>
+
+          <form className={styles.form} onSubmit={handleSubmit}>
+            <div className={styles.inputs_container}>
+              <div className={styles.input_label}>
+                <label htmlFor="name">Nombre</label>
                 <input
-                  className={inputStyles.input}
+                  className={styles.input}
                   id="name"
                   type="text"
                   autoComplete="name"
+                  placeholder="Ingresa tu nombre"
                   onChange={(e) => setName(e.target.value)}
-                  required
-                />
+                  required />
               </div>
-              <div className={inputStyles.input_label}>
-                <label htmlFor="email">Correo:</label>
+              <div className={styles.input_label}>
+                <label htmlFor="email">Email</label>
                 <input
-                  className={inputStyles.input}
+                  className={styles.input}
                   id="email"
                   type="email"
                   autoComplete="email"
+                  placeholder="Ingresa tu email"
                   onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
+                  required />
               </div>
-              <div className={inputStyles.input_label}>
-                <label htmlFor="text">Teléfono:</label>
+              <div className={styles.input_label}>
+                <label htmlFor="phone">Teléfono</label>
                 <input
-                  className={inputStyles.input}
+                  className={styles.input}
                   id="phone"
                   type="tel"
                   autoComplete="tel"
+                  placeholder="Ingresa tu teléfono"
                   onChange={(e) => setPhone(e.target.value)}
-                  required
-                />
+                  required />
               </div>
-              <div className={inputStyles.input_label}>
-                <label htmlFor="password">Contraseña:</label>
+              <div className={styles.input_label}>
+                <label htmlFor="password">Contraseña</label>
                 <input
-                  className={inputStyles.input}
+                  className={styles.input}
                   id="password"
                   type="password"
-                  autoComplete="current-password"
+                  autoComplete="new-password"
+                  placeholder="Crea una contraseña"
                   onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+                  required />
               </div>
-              <div className={inputStyles.input_label}>
-                <label htmlFor="password">Confirmar contraseña:</label>
+              <div className={styles.input_label}>
+                <label htmlFor="confirm_password">Confirmar contraseña</label>
                 <input
-                  className={inputStyles.input}
+                  className={styles.input}
                   id="confirm_password"
                   type="password"
-                  autoComplete="current-password"
+                  autoComplete="new-password"
+                  placeholder="Confirma tu contraseña"
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  required
-                />
+                  required />
               </div>
               <div className={styles.tyc}>
                 <input type="checkbox" id="tyc" />
-                <label htmlFor="tyc" aria-required>Acertar términos y condiciones</label>
+                <label htmlFor="tyc" aria-required>Aceptar términos y condiciones</label>
               </div>
             </div>
-            {error && <p className={styles.error}>{error}</p>}
-            <Button type="submit" theme={false}>
-              {loading ? "Cargando..." : "Registrate"}
+            <Button
+              className={styles.btn_navbar}
+              radius="full"
+              type="submit"
+              color="secondary"
+              disabled={loading}
+            >
+              {loading ? "Cargando..." : "Regístrate"}
             </Button>
+            {error && <p className={styles.error}>{error}</p>}
           </form>
         </article>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
