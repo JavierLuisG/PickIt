@@ -12,6 +12,7 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+import { usePathname } from "next/navigation";
 import styles from "../navbar/page.module.css";
 
 export const PickitLogo = () => {
@@ -28,6 +29,7 @@ export const PickitLogo = () => {
 
 const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const pathname = usePathname();
 
   const menuItems = [
     { name: "Inicio", path: "/" },
@@ -38,6 +40,9 @@ const NavbarPage = () => {
     { name: "Contáctanos", path: "/contact" },
     { name: "Salir", path: "/" },
   ];
+
+  const buttonText = pathname === "/login" ? "Registrate" : "Iniciar sesión";
+  const buttonHref = pathname === "/login" ? "/register" : "/login";
 
   return (
     <Navbar maxWidth="2xl" onMenuOpenChange={setIsMenuOpen} isBordered>
@@ -71,9 +76,9 @@ const NavbarPage = () => {
             radius="full"
             as={Link}
             color="secondary"
-            href="/login"
+            href={buttonHref}
           >
-            Iniciar sesión
+            {buttonText}
           </Button>
         </NavbarItem>
       </NavbarContent>
