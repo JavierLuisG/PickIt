@@ -40,18 +40,24 @@
 }
 
 .quick_links a {
+  color: var(--color-text-secondary);
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .quick_links a:hover {
-  color: var(--color-purple-600);
+  color: var(--color-text-third);
 }
 
 /* Column 3 */
 .networks_contact {
   display: flex;
   gap: 10px;
+}
+
+.p,
+.p b {
+  color: var(--color-text-secondary) !important;
 }
 
 .img {

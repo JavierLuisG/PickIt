@@ -26,12 +26,12 @@ const Footer = () => {
           </article>
           <article className={`${styles.column}`}>
             <div>
-              <p><b>¿Tienes alguna pregunta?</b></p>
-              <p><b>¿Te gustaría saber más?</b></p>
+              <p className={`${styles.p}`}><b>¿Tienes alguna pregunta?</b></p>
+              <p className={`${styles.p}`}><b>¿Te gustaría saber más?</b></p>
             </div>
             <div>
-              <p>Explora, descubre y</p>
-              <p>¡Contáctanos!</p>
+              <p className={`${styles.p}`}>Explora, descubre y</p>
+              <p className={`${styles.p}`}>¡Contáctanos!</p>
             </div>
             <div className={`${styles.networks_contact}`}>
               <Link
