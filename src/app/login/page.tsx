@@ -58,39 +58,39 @@ const Page: React.FC = () => {
     <section className={`${styles.container}`}>
       <div className={`${styles.login_container}`}>
         <article className={`${styles.column1}`}>
-          <img src="/images/img_market.jpg" alt="login img" />
+          <img src="/images/img_person.jpg" alt="login img" />
         </article>
         <article className={styles.column2}>
           <div className={styles.title}>
-            <p>TU ACCESO SEGURO</p>
+            <p>Bienvenido nuevamente</p>
+            <p>Ingresa tus credenciales</p>
           </div>
 
           <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.inputs_container}>
               <div className={styles.input_label}>
+                <label htmlFor="email">Email</label>
                 <input
                   className={styles.input}
                   id="email"
                   type="email"
                   autoComplete="email"
-                  placeholder="Escribe tu correo electrónico"
+                  placeholder="Ingresa tu email"
                   onChange={(e) => setEmail(e.target.value)}
                   required />
               </div>
               <div className={styles.input_label}>
+                <label htmlFor="password">Contraseña</label>
                 <input
                   className={styles.input}
                   id="password"
                   type="password"
                   autoComplete="current-password"
-                  placeholder="Escribe tu contraseña"
+                  placeholder="Ingresa tu contraseña"
                   onChange={(e) => setPassword(e.target.value)}
                   required />
               </div>
             </div>
-            <Link className={styles.recover} href={"/"}>
-              Olvidaste tu contraseña?
-            </Link>
             <Button
               className={styles.btn_navbar}
               radius="full"
@@ -101,14 +101,17 @@ const Page: React.FC = () => {
             >
               {loading ? "Cargando..." : "Ingresa a tu cuenta"}
             </Button>
+            <Link className={styles.recover} href={"/"}>
+              Olvidaste tu contraseña?
+            </Link>
             {error && <p className={styles.error}>{error}</p>}
-            <p className={styles.p_register}>
-              Aún no tienes cuenta?
-              <Link className={styles.register} href={"/register"}>
-                Registrate aquí
-              </Link>
-            </p>
           </form>
+          {/* <p className={styles.p_register}>
+            Aún no tienes cuenta?
+            <Link className={styles.register} href={"/register"}>
+              Registrate aquí
+            </Link>
+          </p> */}
         </article>
       </div>
     </section>

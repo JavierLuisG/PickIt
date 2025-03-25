@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #FAFAFA;
+  background: var(--color-zinc-50);
 }
 
 .header_footer {
@@ -45,7 +45,7 @@
 }
 
 .quick_links a:hover {
-  color: #6020A0;
+  color: var(--color-purple-600);
 }
 
 /* Column 3 */
@@ -72,12 +72,12 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  background-color: #F4F4F5;
+  background-color: var(--color-zinc-100);
 }
 
 .text {
   font-size: 0.9em;
-  color: #52525B;
+  color: var(--color-zinc-600);
 }
 
 .text_body {

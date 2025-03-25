@@ -1,9 +1,11 @@
 .container {
   width: 100%;
-  padding: 4em;
+  min-height: 70vh;
+  padding: 4em 2em;
   background-color: var(--color-purple-50);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .login_container {
@@ -11,9 +13,8 @@
   max-width: 1170px;
   max-height: 500px;
   display: flex;
-  border-radius: 1.5em;
-  box-shadow: 0px 6px 12px 0px var(--color-zinc-400);
-  background-color: var(--color-purple-100);
+  justify-content: center;
+  align-items: center;
 }
 
 .column1 img {
@@ -28,8 +29,10 @@
   display: flex;
   flex-grow: 1;
   flex-direction: column;
+  justify-content: center;
+  align-items: start;
   gap: 1em;
-  padding: 3em 2.5em;
+  padding: 2em 0em 3em 2em;
 }
 
 .title {
@@ -37,16 +40,22 @@
   flex-direction: column;
 }
 
-.title p {
-  font-size: 2.5rem;
-  font-weight: 700;
+.title p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-zinc-800);
+}
+
+.title p:nth-child(2) {
+  font-size: 1rem;
   color: var(--color-zinc-800);
 }
 
 .form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .inputs_container {
@@ -81,8 +90,10 @@
 }
 
 .recover {
-  text-align: right;
-  color: var(--color-text-third);
+  width: auto;
+  text-align: center;
+  margin: auto;
+  color: var(--color-text-secondary);
 }
 
 .p_register {
@@ -98,31 +109,13 @@
 
 .recover:hover,
 .register:hover {
-  text-decoration: underline;
-  color: var(--color-text-opaco);
+  color: var(--color-text-third);
 }
 
-@media (max-width: 1000px) {
-  .login_container {
-    flex-direction: column;
-    max-width: 600px;
-    max-height: 100%;
-  }
-
-  .column1 img {
-    border-radius: 1em 1em 0 0;
-    height: 350px;
-  }
-
-  .column2 {
-    max-width: 100%;
-    padding: 2em 3em 3em;
-  }
-}
-
-@media (max-width: 540px) {
-  .container {
-    padding: 0em;
+/* =================== Media querys =================== */
+@media (max-width: 480px) {
+  .column1 {
+    display: none;
   }
 
   .p_register {
@@ -135,5 +128,27 @@
   .column1 img {
     box-shadow: none;
     border-radius: 0em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2em 0em;
+  }
+
+  .login_container {
+    flex-direction: column;
+    max-width: 600px;
+    max-height: 100%;
+  }
+
+  .column1 img {
+    border-radius: 1em 1em 0 0;
+    height: 400px;
+  }
+
+  .column2 {
+    width: 100%;
+    padding: 2em 2em 3em;
   }
 }
