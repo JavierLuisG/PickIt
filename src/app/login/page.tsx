@@ -101,17 +101,11 @@ const Page: React.FC = () => {
             >
               {loading ? "Cargando..." : "Ingresa a tu cuenta"}
             </Button>
-            <Link className={styles.recover} href={"/"}>
+            <Link className={styles.recover} href={"/forgot-password"}>
               Olvidaste tu contraseña?
             </Link>
             {error && <p className={styles.error}>{error}</p>}
           </form>
-          {/* <p className={styles.p_register}>
-            Aún no tienes cuenta?
-            <Link className={styles.register} href={"/register"}>
-              Registrate aquí
-            </Link>
-          </p> */}
         </article>
       </div>
     </section>
