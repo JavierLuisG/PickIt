@@ -20,7 +20,7 @@ const Footer = () => {
               <Link href="/aboutUs">Sobre Nosotros</Link>
               <Link href="/products">Productos</Link>
               <Link href="/favorites">Favoritos</Link>
-              <Link href="/">Terminos y condiciones</Link>
+              <Link href="/tyc">Terminos y condiciones</Link>
               <Link href="/contact">Contacto</Link>
             </div>
           </article>

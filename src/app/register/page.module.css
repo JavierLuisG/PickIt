@@ -93,6 +93,15 @@
 
   & label {
     font-size: 14px;
+    text-decoration: underline;
+    color: var(--color-text-secondary);
+    cursor: default; /* Cambiado para que no sea clickeable */
+  }
+
+  & a {
+    font-size: 14px;
+    text-decoration: underline;
+    color: var(--color-text-secondary);
     cursor: pointer;
   }
 

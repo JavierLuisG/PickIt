@@ -1,0 +1,60 @@
+.container_tyc {
+  padding: 2em;
+  background-color: var(--color-purple-50);
+  line-height: 1.6;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+}
+
+.header {
+  margin-bottom: 2em;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+.date {
+  font-size: 0.9rem;
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.paragraph {
+  font-size: 1rem;
+  margin-bottom: 1em;
+  text-align: justify;
+}
+
+.link {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}

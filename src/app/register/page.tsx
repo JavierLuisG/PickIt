@@ -147,8 +147,10 @@ const Page: React.FC = () => {
                   required />
               </div>
               <div className={styles.tyc}>
-                <input type="checkbox" id="tyc" />
-                <label htmlFor="tyc" aria-required>Aceptar términos y condiciones</label>
+                <input type="checkbox" id="tyc" required />
+                <a href="/tyc" target="_blank" rel="noopener noreferrer">
+                  Ver términos y condiciones
+                </a>
               </div>
             </div>
             <Button
