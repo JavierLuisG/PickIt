@@ -89,29 +89,21 @@
   flex-direction: row;
   justify-content: left;
   align-items: center;
-  gap: 6px;
-
-  & label {
-    font-size: 14px;
-    text-decoration: underline;
-    color: var(--color-text-secondary);
-    cursor: default; /* Cambiado para que no sea clickeable */
-  }
+  gap: 8px;
 
   & a {
     font-size: 14px;
-    text-decoration: underline;
-    color: var(--color-text-secondary);
     cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--color-text-third);
+    }
   }
 
   & input {
     cursor: pointer;
   }
-}
-
-.tyc:hover {
-  color: var(--color-text-third);
 }
 
 /* =================== Media querys =================== */

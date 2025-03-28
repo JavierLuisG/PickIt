@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { validateEmail, validatePhone, validateText, encodePassword, formatInput, formatText, fakeApi } from "@/utils/authUtils";
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 interface UserCredentials {
   name: string;
@@ -148,9 +149,9 @@ const Page: React.FC = () => {
               </div>
               <div className={styles.tyc}>
                 <input type="checkbox" id="tyc" required />
-                <a href="/tyc" target="_blank" rel="noopener noreferrer">
+                <Link href="/tyc" rel="noopener noreferrer">
                   Ver términos y condiciones
-                </a>
+                </Link>
               </div>
             </div>
             <Button
