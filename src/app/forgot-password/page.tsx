@@ -31,7 +31,7 @@ const ForgotPasswordPage: React.FC = () => {
     <section className={`${styles.container}`}>
       <div className={`${styles.forgot_container}`}>
         <article className={`${styles.column1}`}>
-          <img src="/images/img_person.jpg" alt="forgot password img" />
+          <img src="/images/img_mujeres_riendo.jpg" alt="forgot password img" />
         </article>
         <article className={styles.column2}>
           <div className={styles.title}>

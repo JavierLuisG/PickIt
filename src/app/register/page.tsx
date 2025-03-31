@@ -82,7 +82,7 @@ const Page: React.FC = () => {
     <section className={`${styles.container}`}>
       <div className={`${styles.register_container}`}>
         <article className={`${styles.column1}`}>
-          <img src="/images/img_person.jpg" alt="register img" />
+          <img src="/images/img_mujeres_riendo.jpg" alt="register img" />
         </article>
         <article className={styles.column2}>
           <div className={styles.title}>

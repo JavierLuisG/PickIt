@@ -23,7 +23,7 @@ const Page: React.FC = () => {
         </Button>
       </div>
       <div className={styles.hero_image_container}>
-        <img src="/images/img_amigos_1.jpeg" className={styles.hero_img} />
+        <img src="/images/img_amigos_1.jpg" className={styles.hero_img} />
       </div>
     </section>
   )
