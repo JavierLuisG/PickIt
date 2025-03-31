@@ -1,3 +1,6 @@
 .home_container {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
