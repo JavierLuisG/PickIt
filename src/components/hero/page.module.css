@@ -24,7 +24,7 @@
 }
 
 .subtitle {
-  font-size: 0.7em;
+  font-size: 0.9em;
 }
 
 .title {
@@ -45,7 +45,7 @@
 
 .hero_btn {
   margin-top: 2em;
-  font-size: 0.8em;
+  font-size: 1em;
   width: 100%;
   max-width: 25em;
   height: 2em;
@@ -55,19 +55,13 @@
   font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   .hero_container {
     flex-direction: column-reverse;
   }
-
+  
   .hero_image_container {
     max-height: 100%;
-  }
-}
-
-@media (max-width: 858px) {
-  .hero_content {
-    padding: 2em 1.5em;
   }
 }
 
