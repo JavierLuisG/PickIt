@@ -24,7 +24,7 @@
 }
 
 .subtitle {
-  font-size: 0.9em;
+  font-size: 1em;
 }
 
 .title {
@@ -58,9 +58,8 @@
   .hero_container {
     flex-direction: column-reverse;
   }
-  
+
   .hero_image_container {
     max-height: 100%;
   }
 }
-

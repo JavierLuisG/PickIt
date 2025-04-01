@@ -54,7 +54,7 @@ const Footer = () => {
       </section>
 
       <section className={`${styles.body_footer}`}>
-        <p className={`${styles.text} ${styles.title_body}`}>Powered by </p>
+        <p className={`${styles.text} ${styles.title_body}`}>Desarrollado por</p>
         <div className={`${styles.text_body}`}>
           <span className={`${styles.text}`}>
             Todos los derechos reservados.
