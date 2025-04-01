@@ -11,11 +11,12 @@ const Page: React.FC = () => {
         Accede a más funciones y simplifica tus compras.
       </p>
       <div className={styles.auth_cards_container}>
-
         <div className={styles.auth_card}>
           <div>
-            <h3 className={styles.auth_card_title}>Únete y descubre más posibilidades</h3>
-            <ul className={styles.auth_card_list}>
+            <h3 className={`${styles.auth_card_title} ${styles.auth_card_title_register}`}>
+              Empieza ahora y disfruta de más posibilidades
+            </h3>
+            <ul className={`${styles.auth_card__list} ${styles.auth_card_list_register}`}>
               <li>Guarda tus productos favoritos y accede a ellos en cualquier momento.</li>
               <li>Sé el primero en conocer nuevas ofertas y lanzamientos.</li>
               <li>Compra sin complicaciones con un solo clic.</li>
@@ -27,14 +28,13 @@ const Page: React.FC = () => {
             as={Link}
             href="/register"
           >
-            Crear cuenta gratis
+            Crea tu cuenta
           </Button>
         </div>
-
         <div className={styles.auth_card}>
           <div>
-            <h3 className={styles.auth_card_title}>Ingresa y continúa donde lo dejaste</h3>
-            <ul className={styles.auth_card_list}>
+            <h3 className={`${styles.auth_card_title} ${styles.auth_card_title_login}`}>Ingresa y continúa donde lo dejaste</h3>
+            <ul className={`${styles.auth_card_list} ${styles.auth_card_list_login}`}>
               <li>Agrega productos al carrito y gestiona tu compra fácilmente.</li>
               <li>Accede a tu historial y revisa tus compras anteriores.</li>
               <li>Disfruta de una experiencia personalizada basada en tus intereses.</li>
@@ -49,7 +49,6 @@ const Page: React.FC = () => {
             Ingresa ahora
           </Button>
         </div>
-
       </div>
     </section>
   )

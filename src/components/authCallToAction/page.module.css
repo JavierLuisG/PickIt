@@ -37,26 +37,10 @@
 
 .auth_card:first-child {
   background-color: var(--color-purple-100);
-
-  .auth_card_title {
-    color: var(--color-text-secondary);
-  }
-
-  .auth_card_list li {
-    color: var(--color-text-opaco);
-  }
 }
 
 .auth_card:nth-child(2) {
   background-color: var(--color-text-third);
-
-  .auth_card_title {
-    color: var(--color-text-primary);
-  }
-
-  .auth_card_list li {
-    color: var(--color-zinc-200);
-  }
 }
 
 .auth_card_title {
@@ -64,6 +48,14 @@
   font-weight: bold;
   margin-bottom: 0.8em;
   line-height: 1.2;
+}
+
+.auth_card_title_register {
+  color: var(--color-text-secondary);
+}
+
+.auth_card_title_login {
+  color: var(--color-text-primary);
 }
 
 .auth_card_list {
@@ -75,6 +67,14 @@
   font-size: 1em;
   margin-bottom: 0.5em;
   position: relative;
+}
+
+.auth_card_list_register li {
+  color: var(--color-text-opaco);
+}
+
+.auth_card_list_login li {
+  color: var(--color-zinc-200);
 }
 
 .auth_button {
