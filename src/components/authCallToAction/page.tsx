@@ -16,11 +16,9 @@ const Page: React.FC = () => {
             <h3 className={`${styles.auth_card_title} ${styles.auth_card_title_register}`}>
               Empieza ahora y disfruta de más posibilidades
             </h3>
-            <ul className={`${styles.auth_card__list} ${styles.auth_card_list_register}`}>
-              <li>Guarda tus productos favoritos y accede a ellos en cualquier momento.</li>
-              <li>Sé el primero en conocer nuevas ofertas y lanzamientos.</li>
-              <li>Compra sin complicaciones con un solo clic.</li>
-            </ul>
+            <p className={`${styles.auth_card_list} ${styles.auth_card_list_register}`}>
+              Guarda tus favoritos, accede a ofertas exclusivas y compra fácilmente con un solo clic.
+            </p>
           </div>
           <Button
             className={styles.auth_button}
@@ -34,11 +32,9 @@ const Page: React.FC = () => {
         <div className={styles.auth_card}>
           <div>
             <h3 className={`${styles.auth_card_title} ${styles.auth_card_title_login}`}>Ingresa y continúa donde lo dejaste</h3>
-            <ul className={`${styles.auth_card_list} ${styles.auth_card_list_login}`}>
-              <li>Agrega productos al carrito y gestiona tu compra fácilmente.</li>
-              <li>Accede a tu historial y revisa tus compras anteriores.</li>
-              <li>Disfruta de una experiencia personalizada basada en tus intereses.</li>
-            </ul>
+            <p className={`${styles.auth_card_list} ${styles.auth_card_list_login}`}>
+              Añade productos al carrito, revisa tu historial y disfruta de una experiencia personalizada.
+            </p>
           </div>
           <Button
             className={styles.auth_button_secondary}

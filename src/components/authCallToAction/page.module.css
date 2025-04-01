@@ -32,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 1em;
+  gap: 2.2em;
 }
 
 .auth_card:first-child {
@@ -44,9 +44,9 @@
 }
 
 .auth_card_title {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-bottom: 0.8em;
+  font-size: 2em;
+  font-weight: 700;
+  margin-bottom: 0.4em;
   line-height: 1.2;
 }
 
@@ -59,21 +59,15 @@
 }
 
 .auth_card_list {
-  line-height: 1.1;
-  margin-bottom: 1em;
+  font-size: 1.2em;
+  line-height: 1.2;
 }
 
-.auth_card_list li {
-  font-size: 1em;
-  margin-bottom: 0.5em;
-  position: relative;
-}
-
-.auth_card_list_register li {
+.auth_card_list_register {
   color: var(--color-text-opaco);
 }
 
-.auth_card_list_login li {
+.auth_card_list_login {
   color: var(--color-zinc-200);
 }
 

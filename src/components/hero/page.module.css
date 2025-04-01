@@ -36,9 +36,8 @@
 }
 
 .description {
-  font-weight: 600;
   font-size: 1.2em;
-  line-height: 1;
+  line-height: 1.2;
   margin-top: 0.8em;
   color: var(--color-text-opaco);
 }
