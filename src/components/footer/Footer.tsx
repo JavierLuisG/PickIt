@@ -26,8 +26,8 @@ const Footer = () => {
           </article>
           <article className={`${styles.column}`}>
             <div>
-              <p className={`${styles.p}`}><b>¿Tienes alguna pregunta?</b></p>
-              <p className={`${styles.p}`}><b>¿Te gustaría saber más?</b></p>
+              <p><b className={`${styles.p}`}>¿Tienes alguna pregunta?</b></p>
+              <p><b className={`${styles.p}`}>¿Te gustaría saber más?</b></p>
             </div>
             <div>
               <p className={`${styles.p}`}>Explora, descubre y</p>
@@ -52,7 +52,6 @@ const Footer = () => {
           </article>
         </div>
       </section>
-
       <section className={`${styles.body_footer}`}>
         <p className={`${styles.text} ${styles.title_body}`}>Desarrollado por</p>
         <div className={`${styles.text_body}`}>
