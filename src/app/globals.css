@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 :root {
+  --color-background: white;
+  --color-background-secondary: var(--color-purple-50);
+
   --color-text-primary: white;
   --color-text-secondary: #180828;
   --color-text-third: #7828C8;
