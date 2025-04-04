@@ -1,0 +1,70 @@
+.htb_section {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 2em;
+  padding: 3em 2em;
+  background-color: var(--color-background-secondary);
+}
+
+.htb_image_container {
+  width: 50vw; 
+  height: auto;
+  position: relative;
+}
+
+.htb_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  object-position: right center;
+  border-radius: 0.7em;
+}
+
+.htb_content {
+  max-width: 50%;
+}
+
+.htb_title {
+  font-size: 2em;
+  font-weight: 700;
+  color: var(--color-text-third);
+}
+
+.htb_steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.step_title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.step_description {
+  font-size: 1.2em;
+  line-height: 1.2;
+  color: var(--color-text-opaco);
+}
+
+:is(.htb_section) {
+  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+}
+
+@media (max-width: 768px) {
+  .htb_section {
+    flex-direction: column;
+  }
+
+  .htb_image_container {
+    width: 100%;
+    
+  }
+
+  .htb_content {
+    max-width: 100%;
+  }
+}
