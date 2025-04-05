@@ -32,7 +32,6 @@ const NavbarPage = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: "Inicio", path: "/" },
     { name: "Iniciar sesión", path: "/login" },
     { name: "Registrate", path: "/register" },
     { name: "Favoritos", path: "/favorites" },
@@ -45,32 +44,32 @@ const NavbarPage = () => {
   const buttonHref = pathname === "/login" ? "/register" : "/login";
 
   return (
-    <Navbar maxWidth="2xl" onMenuOpenChange={setIsMenuOpen} isBordered>
+    <Navbar className={styles.navbar_container} maxWidth="full" onMenuOpenChange={setIsMenuOpen} isBordered>
       <NavbarContent>
         <NavbarBrand>
           <PickitLogo />
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className="hidden sm:flex gap-6" justify="center">
-        <NavbarItem>
+      <NavbarContent className={`hidden md:flex ${styles.navbar_content}`} justify="center">
+        <NavbarItem className={styles.container_text}>
           <Link className={styles.text} color="foreground" href="/contact">
             Contacto
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className={styles.container_text}>
           <Link className={styles.text} color="foreground" href="/products">
             Productos
           </Link>
         </NavbarItem>
-        <NavbarItem>
+        <NavbarItem className={styles.container_text}>
           <Link className={styles.text} color="foreground" href="/favorites">
             Favoritos
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent className="hidden sm:flex gap-4" justify="end">
-        <NavbarItem>
+      <NavbarContent className={`hidden md:flex ${styles.navbar_content}`} justify="end">
+        <NavbarItem className={styles.container_btn_navbar}>
           <Button
             className={styles.btn_navbar}
             radius="full"
@@ -84,12 +83,12 @@ const NavbarPage = () => {
       </NavbarContent>
       <NavbarMenuToggle
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        className={`sm:hidden ${styles.menu_toggle}`}
+        className={`md:hidden ${styles.menu_toggle}`}
       />
-      <NavbarMenu>
+      <NavbarMenu className={styles.menu_container}>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item.name}-${index}`}>
-            <div className={styles.container_menu_item}>
+          <NavbarMenuItem className={styles.container_menu_item} key={`${item.name}-${index}`}>
+            <div>
               <Link
                 className={styles.menu_item}
                 href={item.path}
