@@ -1,9 +1,20 @@
-.contact_section {
+.contact_container {
   width: 100%;
-  max-width: 30em;
   margin: 0 auto;
   padding: 3em 2em;
   background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_section {
+  max-width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
 }
 
 .title_container {
@@ -20,7 +31,6 @@
 .contact_subtitle {
   font-size: 0.9em !important;
   color: var(--color-text-third);
-  margin-bottom: 2em;
 }
 
 .form {
@@ -83,7 +93,14 @@
   background-color: var(--color-purple-900);
 }
 
-:is(.contact_section,
+.btn_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+:is(.contact_container,
+  .contact_section,
   .title_container,
   .contact_title,
   .contact_subtitle,
@@ -93,13 +110,15 @@
   .label,
   .input,
   .btn_navbar,
+  .btn_container,
 ) {
   font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
 }
 
 @media (max-width: 768px) {
 
-  :is(.contact_section,
+  :is(.contact_container,
+    .contact_section,
     .title_container,
     .contact_title,
     .contact_subtitle,
@@ -109,6 +128,7 @@
     .label,
     .input,
     .btn_navbar,
+    .btn_container,
   ) {
     font-size: clamp(1.2rem, 1.2vw + 0.7rem, 7rem);
   }

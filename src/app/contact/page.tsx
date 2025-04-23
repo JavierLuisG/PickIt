@@ -63,73 +63,77 @@ const ContactPage = () => {
   };
 
   return (
-    <section className={styles.contact_section}>
-      <div className={styles.title_container}>
-        <h1 className={styles.contact_title}>Contacto</h1>
-        <p className={styles.contact_subtitle}>
-          Si tienes alguna pregunta, no dudes en contactarnos
-        </p>
-      </div>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.inputs_container}>
-          <div className={styles.input_label}>
-            <label className={styles.label} htmlFor="name">Nombre *</label>
-            <input
-              className={styles.input}
-              id="name"
-              type="text"
-              autoComplete="name"
-              placeholder="Ingresa tu nombre"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              aria-required="true"
-              aria-invalid={error && !validateText(name) ? "true" : "false"}
-              required
-            />
-          </div>
-          <div className={styles.input_label}>
-            <label className={styles.label} htmlFor="email">Email *</label>
-            <input
-              className={styles.input}
-              id="email"
-              type="email"
-              autoComplete="email"
-              placeholder="Ingresa tu email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              aria-required="true"
-              aria-invalid={error && !validateEmail(email) ? "true" : "false"}
-              required
-            />
-          </div>
-          <div className={styles.input_label}>
-            <label className={styles.label} htmlFor="textArea">Mensaje *</label>
-            <textarea
-              className={styles.text_area}
-              id="textArea"
-              autoComplete="off"
-              placeholder="Escribe tu mensaje..."
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-              aria-required="true"
-              aria-invalid={error && !validateText(text) ? "true" : "false"}
-              required
-              rows={5}
-            />
-          </div>
+    <div className={styles.contact_container}>
+      <section className={styles.contact_section}>
+        <div className={styles.title_container}>
+          <h1 className={styles.contact_title}>Contáctanos</h1>
+          <p className={styles.contact_subtitle}>
+            Si tienes alguna inquietud, te respondemos con gusto
+          </p>
         </div>
-        <Button
-          className={styles.btn_navbar}
-          radius="full"
-          type="submit"
-          color="secondary"
-          disabled={loading}
-        >
-          {loading ? "Cargando..." : "Enviar"}
-        </Button>
-        {error && <p className={styles.error}>{error}</p>}
-      </form>
-    </section>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.inputs_container}>
+            <div className={styles.input_label}>
+              <label className={styles.label} htmlFor="name">Nombre *</label>
+              <input
+                className={styles.input}
+                id="name"
+                type="text"
+                autoComplete="name"
+                placeholder="Ingresa tu nombre"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                aria-required="true"
+                aria-invalid={error && !validateText(name) ? "true" : "false"}
+                required
+              />
+            </div>
+            <div className={styles.input_label}>
+              <label className={styles.label} htmlFor="email">Email *</label>
+              <input
+                className={styles.input}
+                id="email"
+                type="email"
+                autoComplete="email"
+                placeholder="Ingresa tu email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                aria-required="true"
+                aria-invalid={error && !validateEmail(email) ? "true" : "false"}
+                required
+              />
+            </div>
+            <div className={styles.input_label}>
+              <label className={styles.label} htmlFor="textArea">Mensaje *</label>
+              <textarea
+                className={styles.text_area}
+                id="textArea"
+                autoComplete="off"
+                placeholder="Escribe tu mensaje..."
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                aria-required="true"
+                aria-invalid={error && !validateText(text) ? "true" : "false"}
+                required
+                rows={5}
+              />
+            </div>
+          </div>
+          <div className={styles.btn_container}>
+            <Button
+              className={styles.btn_navbar}
+              radius="full"
+              type="submit"
+              color="secondary"
+              disabled={loading}
+            >
+              {loading ? "Cargando..." : "Enviar"}
+            </Button>
+          </div>
+          {error && <p className={styles.error}>{error}</p>}
+        </form>
+      </section>
+    </div>
   );
 };
 
