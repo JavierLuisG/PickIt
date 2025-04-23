@@ -3,11 +3,11 @@ import Link from "next/link";
 
 const TermsAndConditionsPage = () => {
   return (
-    <section className={styles.container_tyc}>
+    <section className={styles.tyc_section}>
       <div className={styles.container}>
         <div className={styles.header}>
           <h1 className={styles.title}>Términos y Condiciones</h1>
-          <p className={styles.date}>Última actualización: 20 de julio de 2024</p>
+          <p className={styles.date}>Última actualización: 20 de marzo de 2025</p>
         </div>
         <div className={styles.content}>
           <h2 className={styles.subtitle}>1. Introducción</h2>

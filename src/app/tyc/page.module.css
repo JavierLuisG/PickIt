@@ -1,6 +1,5 @@
-.container_tyc {
-  padding: 2em;
-  background-color: var(--color-purple-50);
+.tyc_section {
+  padding: 3em 2em;
   line-height: 1.6;
   height: auto;
   display: flex;
@@ -11,7 +10,6 @@
 
 .container {
   width: 100%;
-  max-width: 1170px;
 }
 
 .header {
@@ -19,34 +17,34 @@
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2em !important;
   font-weight: bold;
   text-align: center;
-  margin-bottom: 0.5em;
+  line-height: 1.2;
+  margin-bottom: 0.2em;
 }
 
 .date {
-  font-size: 0.9rem;
+  font-size: 0.9em !important;
   text-align: center;
-  color: var(--color-text-secondary);
+  color: var(--color-text-third);
 }
 
 .content {
-  max-width: 800px;
+  max-width: 40em;
   margin: 0 auto;
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .paragraph {
-  font-size: 1rem;
+  font-size: 1em !important;
   margin-bottom: 1em;
-  text-align: justify;
 }
 
 .link {
@@ -57,4 +55,33 @@
 .link:hover {
   color: #0056b3;
   text-decoration: none;
+}
+
+:is(.tyc_section,
+  .container,
+  .header,
+  .title,
+  .date,
+  .content,
+  .subtitle,
+  .paragraph,
+  .link,
+) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 7rem);
+}
+
+@media (max-width: 768px) {
+
+  :is(.tyc_section,
+    .container,
+    .header,
+    .title,
+    .date,
+    .content,
+    .subtitle,
+    .paragraph,
+    .link,
+  ) {
+    font-size: clamp(1.2rem, 1.2vw + 0.7rem, 7rem);
+  }
 }
