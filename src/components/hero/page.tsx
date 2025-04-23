@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { Button, Link } from "@heroui/react";
 
-const Page: React.FC = () => {
+const HeroComponent = () => {
   return (
     <section className={styles.hero_container}>
       <div className={styles.hero_content}>
@@ -26,7 +26,7 @@ const Page: React.FC = () => {
         <img src="/images/img_amigos_1.jpg" className={styles.hero_img} />
       </div>
     </section>
-  )
+  );
 };
 
-export default Page;
+export default HeroComponent;

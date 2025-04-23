@@ -2,7 +2,7 @@
 
 import styles from "./page.module.css";
 
-const Page: React.FC = () => {
+const HowToBuyComponent = () => {
   return (
     <section className={styles.htb_section}>
       <div className={styles.htb_image_container}>
@@ -32,7 +32,7 @@ const Page: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Page
+export default HowToBuyComponent;

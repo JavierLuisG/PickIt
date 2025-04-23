@@ -12,9 +12,9 @@ interface UserCredentials {
   email: string;
   phone: string;
   password: string;
-}
+};
 
-const Page: React.FC = () => {
+const RegisterPage = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -164,4 +164,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default RegisterPage;

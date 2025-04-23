@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { Button, Link } from "@heroui/react";
 
-const Page: React.FC = () => {
+const AuthCallToActionComponent = () => {
   return (
     <section className={styles.auth_section}>
       <h1 className={styles.auth_title}>Tu experiencia empieza aquí</h1>
@@ -47,7 +47,7 @@ const Page: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Page;
+export default AuthCallToActionComponent;

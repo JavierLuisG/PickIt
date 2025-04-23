@@ -1,16 +1,18 @@
 "use client";
 
-import Hero from "../components/hero/page";
+import HeroComponent from "../components/hero/page";
 import styles from "./page.module.css";
-import AutCallToAction from "../components/authCallToAction/page";
-import HowToBuy from "../components/howToBuy/page";
+import AutCallToActionComponent from "../components/authCallToAction/page";
+import HowToBuyComponent from "../components/howToBuy/page";
 
-export default function Home() {
+const HomePage = () => {
   return (
     <div className={styles.home_container}>
-      <Hero />
-      <AutCallToAction />
-      <HowToBuy />
+      <HeroComponent />
+      <AutCallToActionComponent />
+      <HowToBuyComponent />
     </div>
   );
 };
+
+export default HomePage;

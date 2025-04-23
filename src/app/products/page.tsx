@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import React from 'react';
 import styles from "./page.module.css";
 
-const Page: React.FC = () => {
+const ProductsPage = () => {
   return (
     <div className={styles.product_container}>
       <h1>Bienvenidos a la pagina de Productos</h1>
@@ -11,4 +11,4 @@ const Page: React.FC = () => {
   );
 };
 
-export default Page;
+export default ProductsPage;

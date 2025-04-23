@@ -12,7 +12,7 @@ interface UserCredentials {
   password: string;
 }
 
-const Page: React.FC = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
@@ -102,7 +102,7 @@ const Page: React.FC = () => {
         {error && <p className={styles.error}>{error}</p>}
       </form>
     </section >
-  )
+  );
 };
 
-export default Page;
+export default LoginPage;

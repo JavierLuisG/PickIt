@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 
-const TermsAndConditions: React.FC = () => {
+const TermsAndConditionsPage = () => {
   return (
     <section className={styles.container_tyc}>
       <div className={styles.container}>
@@ -45,4 +45,4 @@ const TermsAndConditions: React.FC = () => {
   );
 };
 
-export default TermsAndConditions;
+export default TermsAndConditionsPage;

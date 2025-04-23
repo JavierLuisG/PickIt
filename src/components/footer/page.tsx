@@ -3,7 +3,7 @@
 import styles from "../footer/page.module.css";
 import Link from "next/link";
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
     <footer className={`${styles.footer_container}`}>
       <section className={`${styles.header_footer}`}>
@@ -64,7 +64,7 @@ const Footer = () => {
         </div>
       </section>
     </footer>
-  )
+  );
 };
 
-export default Footer;
+export default FooterComponent;

@@ -15,7 +15,7 @@ import {
 import { usePathname } from "next/navigation";
 import styles from "../navbar/page.module.css";
 
-const NavbarPage = () => {
+const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
@@ -96,6 +96,6 @@ const NavbarPage = () => {
       </NavbarMenu>
     </Navbar>
   );
-}
+};
 
-export default NavbarPage;
+export default NavbarComponent;
