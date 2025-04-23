@@ -1,4 +1,4 @@
-.register_section {
+.forgot_section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -46,7 +46,7 @@
 .input {
   border-radius: 2em;
   height: 2.2em;
-  padding: 0px 1em;
+  padding: 0em 1em;
   font-size: 0.8em !important;
 }
 
@@ -60,35 +60,18 @@
   height: 2em;
 }
 
-.tyc {
+.back {
   width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: center;
-  gap: 0.5em;
+  text-align: center;
+  margin: auto;
+  font-size: 0.8em !important;
 }
 
-.tyc a {
-  font-size: 0.7em !important;
-  cursor: pointer;
-}
-
-.tyc a:hover {
-  text-decoration: underline;
+.back:hover {
   color: var(--color-text-third);
 }
 
-.tyc input {
-  cursor: pointer;
-}
-
-.input_check {
-  height: 1em;
-  min-width: 0.7em;
-}
-
-:is(.register_section,
+:is(.forgot_section,
   .title,
   .title p,
   .form,
@@ -97,28 +80,22 @@
   .label,
   .input,
   .btn_navbar,
-  .tyc,
-  .tyc a,
-  .tyc input,
-  .input_check,
+  .back,
 ) {
   font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
 }
 
 /* =================== Media querys =================== */
-@media (max-width: 768px) {
-  .p_login {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .register_container {
+@media (max-width: 480px) {
+  .forgot_section {
     box-shadow: none;
     border-radius: 0em;
   }
+}
 
-  :is(.register_section,
+@media (max-width: 768px) {
+
+  :is(.forgot_section,
     .title,
     .title p,
     .form,
@@ -127,10 +104,7 @@
     .label,
     .input,
     .btn_navbar,
-    .tyc,
-    .tyc a,
-    .tyc input,
-    .input_check,
+    .back,
   ) {
     font-size: clamp(1.2rem, 1.2vw + 0.7rem, 4rem);
   }
