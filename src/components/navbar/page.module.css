@@ -2,15 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4em;
+  height: 3em;
+}
+
+.container_logo {
+  height: 100%;
+  min-height: 2.5em;
+}
+
+.link_logo {
+  height: 100%;
 }
 
 .logo_navbar {
-  height: 3.7em; 
+  height: -webkit-fill-available;
+}
+
+.container_btn_navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 100%;
 }
 
 .navbar_content {
-  gap: 1.5em;
+  gap: 3em;
   min-width: 10em;
 }
 
@@ -18,7 +35,7 @@
   color: white;
   width: 10em;
   height: 2em;
-  font-size: 1.1em;
+  font-size: 0.9em !important;
 }
 
 .menu_toggle {
@@ -49,12 +66,12 @@
 }
 
 .container_text {
-  font-size: 1.1em !important;
+  font-size: 1rem;
 }
 
 .text {
-  font-size: 1.1em !important;
   font-weight: 500;
+  font-size: 0.9em !important;
 }
 
 .menu_item {
@@ -65,6 +82,22 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-:is(.navbar_container, .logo_navbar, .text, .navbar_content, .btn_navbar) {
-  font-size: clamp(0.8rem, 0.8vw + 0.8rem, 7rem);
+:is(.navbar_container,
+  .container_logo,
+  .link_logo,
+  .logo_navbar,
+  .container_btn_navbar,
+  .text,
+  .navbar_content,
+  .btn_navbar,
+  .container_text,
+  .text,
+  ) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
+}
+
+@media (max-width: 768px) {
+  .navbar_container {
+    height: 100%;
+  }
 }

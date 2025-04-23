@@ -15,18 +15,6 @@ import {
 import { usePathname } from "next/navigation";
 import styles from "../navbar/page.module.css";
 
-export const PickitLogo = () => {
-  return (
-    <Link href="/">
-      <img
-        className={styles.logo_navbar}
-        src="/images/pickit-logo-color.png"
-        alt="logo"
-      />
-    </Link>
-  );
-};
-
 const NavbarPage = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
@@ -46,8 +34,14 @@ const NavbarPage = () => {
   return (
     <Navbar className={styles.navbar_container} maxWidth="full" onMenuOpenChange={setIsMenuOpen} isBordered>
       <NavbarContent>
-        <NavbarBrand>
-          <PickitLogo />
+        <NavbarBrand className={styles.container_logo}>
+          <Link className={styles.link_logo} href="/">
+            <img
+              className={styles.logo_navbar}
+              src="/images/pickit-logo-color.png"
+              alt="logo"
+            />
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 

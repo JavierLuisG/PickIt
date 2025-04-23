@@ -1,0 +1,147 @@
+.register_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1em;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+}
+
+.title p:first-child {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.title p:nth-child(2) {
+  font-size: 0.8em;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+
+.inputs_container {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input_label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.label {
+  font-size: 0.8em !important;
+}
+
+.input {
+  border-radius: 2em;
+  height: 2.2em;
+  padding: 0px 1em;
+  font-size: 0.8em !important;
+}
+
+.input:focus {
+  outline: none;
+  border: none;
+}
+
+.btn_navbar {
+  font-size: 0.8em !important;
+  height: 2em;
+}
+
+.tyc {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.tyc a {
+  font-size: 0.7em !important;
+  cursor: pointer;
+}
+
+.tyc a:hover {
+  text-decoration: underline;
+  color: var(--color-text-third);
+}
+
+.tyc input {
+  cursor: pointer;
+}
+
+.input_check {
+  height: 1em;
+  min-width: 0.7em;
+}
+
+:is(.register_section,
+  .title,
+  .title p,
+  .form,
+  .inputs_container,
+  .input_label,
+  .label,
+  .input,
+  .btn_navbar,
+  .tyc,
+  .tyc a,
+  .tyc input,
+  .input_check,
+) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
+}
+
+/* =================== Media querys =================== */
+@media (max-width: 768px) {
+  .p_login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .register_container {
+    box-shadow: none;
+    border-radius: 0em;
+  }
+
+  :is(.register_section,
+    .title,
+    .title p,
+    .form,
+    .inputs_container,
+    .input_label,
+    .label,
+    .input,
+    .btn_navbar,
+    .tyc,
+    .tyc a,
+    .tyc input,
+    .input_check,
+  ) {
+    font-size: clamp(1.2rem, 1.2vw + 0.7rem, 4rem);
+  }
+}
+
+/* @media (max-width: 1050px) {
+  .column1 {
+    width: 50%;
+  }
+
+  .column1 img {
+    width: 100%;
+  }
+} */
