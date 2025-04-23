@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 1em;
+  gap: 1.5em;
 }
 
 .title {
@@ -12,12 +12,14 @@
 }
 
 .title p:first-child {
-  font-size: 1.2em;
-  font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 600;  
+  line-height: 1.2;
 }
 
 .title p:nth-child(2) {
-  font-size: 0.8em;
+  font-size: 1em;
+  color: var(--color-text-third);
 }
 
 .form {
@@ -57,7 +59,7 @@
 
 .btn_navbar {
   font-size: 0.8em !important;
-  height: 2em;
+  height: 2.2em;
 }
 
 .tyc {

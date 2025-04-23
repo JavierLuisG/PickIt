@@ -18,7 +18,7 @@
 }
 
 .contact_subtitle {
-  font-size: 1em !important;
+  font-size: 0.9em !important;
   color: var(--color-text-third);
   margin-bottom: 2em;
 }
@@ -79,7 +79,7 @@
 .btn_navbar {
   width: 10em;
   font-size: 0.8em !important;
-  height: 2em;
+  height: 2.2em;
   background-color: var(--color-purple-900);
 }
 

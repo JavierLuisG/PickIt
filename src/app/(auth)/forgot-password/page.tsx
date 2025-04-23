@@ -31,7 +31,7 @@ const ForgotPasswordPage = () => {
     <section className={styles.forgot_section}>
       <div className={styles.title}>
         <p>Recupera tu cuenta</p>
-        <p>Ingresa tu correo electrónico</p>
+        <p>Ingresa tu email registrado</p>
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>

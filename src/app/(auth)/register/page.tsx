@@ -81,8 +81,8 @@ const RegisterPage = () => {
   return (
     <section className={styles.register_section}>
       <div className={styles.title}>
-        <p>Crea tu cuenta</p>
-        <p>Únete a nuestra comunidad</p>
+        <p>Comienza algo diferente </p>
+        <p>Empieza creando tu cuenta</p>
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>
