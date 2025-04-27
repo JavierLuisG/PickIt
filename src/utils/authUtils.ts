@@ -45,7 +45,7 @@ export const fakeApi = (email: string, password: string): Promise<ApiResponse> =
       const storedData = localStorage.getItem("registered");
       registered = storedData ? JSON.parse(storedData) : { email: "", password: "" };
     } catch (error) {
-      reject(new Error("Error al leer las credenciales almacenadas"));
+      reject(new Error("Error al leer las credenciales almacenadas: " + error));
       return;
     }
 

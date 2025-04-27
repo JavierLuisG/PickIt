@@ -3,7 +3,7 @@
 import styles from "./page.module.css";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { validateEmail, validatePhone, validateText, encodePassword, formatInput, formatText, fakeApi } from "@/utils/authUtils";
+import { validateEmail, validatePhone, validateText, encodePassword, formatInput, formatText } from "@/utils/authUtils";
 import { Button } from "@heroui/react";
 import Link from "next/link";
 
