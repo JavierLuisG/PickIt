@@ -25,21 +25,9 @@ const RegisterPage = () => {
   const router = useRouter();
 
   const register = async (user: UserCredentials) => {
-    try {
-      const response = await fakeApi(user.email, user.password);
-      if (response.success) {
-        router.push("/login");
-        localStorage.setItem("user", JSON.stringify(user));
-      } else {
-        localStorage.removeItem("user");
-        setError("Credenciales incorrectas.");
-      }
-    } catch (error) {
-      console.log(error);
-      setError("Error en el servidor. Inténtalo de nuevo más tarde.");
-    } finally {
-      setLoading(false);
-    }
+    router.push("/login");
+    localStorage.setItem("registered", JSON.stringify(user));
+    setLoading(false);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {

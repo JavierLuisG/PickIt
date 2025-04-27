@@ -25,14 +25,64 @@ export const validatePhone = (phone: string): boolean => {
   return phone.length === 10;
 };
 
-export const fakeApi = (email: string, password: string): Promise<{ success: boolean }> => {
-  return new Promise<{ success: boolean }>((resolve) => {
+interface ApiResponse {
+  success: boolean;
+  message: string;
+  userData?: {
+    email: string;
+    name?: string;
+  };
+}
+
+export const fakeApi = (email: string, password: string): Promise<ApiResponse> => {
+  return new Promise<ApiResponse>((resolve, reject) => {
+    if (!email || !password) {
+      reject(new Error("Ingresa correctamente el email y contraseña"));
+      return;
+    }
+    let registered;
+    try {
+      const storedData = localStorage.getItem("registered");
+      registered = storedData ? JSON.parse(storedData) : { email: "", password: "" };
+    } catch (error) {
+      reject(new Error("Error al leer las credenciales almacenadas"));
+      return;
+    }
+
     setTimeout(() => {
-      if (email === "javier@gmail.com" && password === "MTIz") {
-        resolve({ success: true });
-      } else {
-        resolve({ success: false });
+      // No hay usuario registrado
+      if (!registered.email) {
+        resolve({
+          success: false,
+          message: "No hay usuario registrado en el sistema"
+        });
+        return;
       }
+      // Email coincide pero password incorrecta
+      if (email === registered.email && password !== registered.password) {
+        resolve({
+          success: false,
+          message: "La contraseña es incorrecta"
+        });
+        return;
+      }
+      // Email no coincide con ningún registro
+      if (email !== registered.email) {
+        resolve({
+          success: false,
+          message: "El correo electrónico no está registrado"
+        });
+        return;
+      }
+      // Login exitoso
+      resolve({
+        success: true,
+        message: "Inicio de sesión exitoso",
+        userData: {
+          email: registered.email,
+          name: registered.name || "Usuario"
+        }
+      });
     }, 1000);
   });
 };

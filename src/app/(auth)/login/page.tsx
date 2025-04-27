@@ -19,19 +19,33 @@ const LoginPage = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
 
-  const login = async (user: UserCredentials) => {
+  const login = async (
+    user: UserCredentials, 
+    setError: (msg: string) => void, 
+    setLoading: (loading: boolean) => void
+  ) => {
     try {
       const response = await fakeApi(user.email, user.password);
       if (response.success) {
-        router.push("/"); // todo: por ahora redirige al home
-        localStorage.setItem("user", JSON.stringify(user));
+        if (response.userData) {
+          localStorage.setItem("user", JSON.stringify({
+            email: response.userData.email,
+            name: response.userData.name,
+            isLoggedIn: true
+          }));
+        }        
+        router.push("/");
       } else {
         localStorage.removeItem("user");
-        setError("Credenciales incorrectas.");
+        setError(response.message);
       }
     } catch (error) {
-      console.log(error);
-      setError("Error en el servidor. Inténtalo de nuevo más tarde.");
+      console.error("Error durante el login:", error);
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Error en el servidor. Inténtalo de nuevo más tarde.");
+      }
     } finally {
       setLoading(false);
     }
@@ -51,7 +65,12 @@ const LoginPage = () => {
       return;
     }
 
-    login({ email: formattedEmail, password: encodedPassword });
+    const credentials = {
+      email: formattedEmail,
+      password: encodedPassword
+    };
+
+    login(credentials, setError, setLoading);
   };
 
   return (
