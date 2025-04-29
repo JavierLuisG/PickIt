@@ -4,7 +4,7 @@ import styles from "./page.module.css";
 import CardComponent from "../../components/card/page";
 
 const ProductsPage = () => {
-  let products = [
+  const products = [
     { id: 1, title: "Producto 1", price: 10.00, image: "/images/img_person.jpg" },
     { id: 2, title: "Producto 2", price: 20.00, image: "/images/img_person.jpg" },
     { id: 3, title: "Producto 3", price: 30.00, image: "/images/img_person.jpg" },
