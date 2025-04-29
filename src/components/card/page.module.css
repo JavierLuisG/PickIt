@@ -1,0 +1,45 @@
+.card_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 13em;
+}
+
+.card {
+  width: 100%;
+  max-width: 30em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_img {}
+
+.img {}
+
+.card_content {}
+
+.info_content {}
+
+.title {}
+
+.price {}
+
+.card_btn {}
+
+.btn {}
+
+:is(.card_section,
+  .card
+  .card_img,
+  .img,
+  .card_content,
+  .info_content,
+  .title,
+  .price,
+  .card_btn,
+  .btn) {
+  font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
+}
