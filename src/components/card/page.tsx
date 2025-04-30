@@ -1,7 +1,15 @@
 "use client";
 
 import styles from "./page.module.css";
-import { Image, Button, Link } from "@heroui/react";
+import ModalCart from "../../components/modalCart/page";
+import {
+  Image,
+  Link,
+  useDisclosure,
+  Modal,
+  ModalContent,
+  Button,
+} from "@heroui/react";
 
 type Producto = {
   id: number;
@@ -15,6 +23,12 @@ type CardComponentProps = {
 };
 
 const CardComponent = ({ product }: CardComponentProps) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleOpen = () => {
+    onOpen();
+  };
+
   return (
     <section className={styles.card_section}>
       <Image
@@ -38,10 +52,24 @@ const CardComponent = ({ product }: CardComponentProps) => {
             className={styles.btn}
             radius="none"
             as={Link}
-            href="/"
+            onPress={() => handleOpen()}
           >
             Agregar al carrito
           </Button>
+          <Modal
+            className={styles.modal}
+            backdrop="opaque"
+            isOpen={isOpen}
+            onClose={onClose}
+            size="4xl"
+            radius="none"
+          >
+            <ModalContent>
+              {(onClose) => (
+                <ModalCart product={product}/>
+              )}
+            </ModalContent>
+          </Modal>
         </div>
       </div>
     </section >
