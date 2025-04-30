@@ -1,4 +1,7 @@
+"use client";
+
 import styles from "./page.module.css";
+import { Image, Button, Link } from "@heroui/react";
 
 type Producto = {
   id: number;
@@ -11,27 +14,34 @@ type CardComponentProps = {
   product: Producto;
 };
 
-const CardComponent = ({ product } : CardComponentProps) => {
+const CardComponent = ({ product }: CardComponentProps) => {
   return (
     <section className={styles.card_section}>
-      <div className={styles.card}>
-        <div className={styles.card_img}>
-          <img className={styles.img} src={product.image} alt="" />
+      <Image
+        isZoomed
+        alt="HeroUI Fruit Image with Zoom"
+        radius="none"
+        src={product.image}
+      />
+      <div className={styles.card_content}>
+        <div className={styles.info_content}>
+          <h2 className={styles.title}>
+            {product.title}
+          </h2>
+          <hr aria-orientation="horizontal" className={styles.hr_line} />
+          <p className={styles.price}>
+            $ {product.price}
+          </p>
         </div>
-        <div className={styles.card_content}>
-          <div className={styles.info_content}>
-            <h2 className={styles.title}>
-              {product.title}
-            </h2>
-            <p className={styles.price}>
-              $ {product.price}
-            </p>
-          </div>
-          <div className={styles.card_btn}>
-            <button className={styles.btn}>
-              Agregar a favoritos
-            </button>
-          </div>
+        <div className={styles.card_btn}>
+          <Button
+            className={styles.btn}
+            radius="none"
+            as={Link}
+            href="/"
+          >
+            Agregar al carrito
+          </Button>
         </div>
       </div>
     </section >
