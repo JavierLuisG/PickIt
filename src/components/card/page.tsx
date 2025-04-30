@@ -65,7 +65,7 @@ const CardComponent = ({ product }: CardComponentProps) => {
             radius="none"
           >
             <ModalContent>
-              {(onClose) => (
+              {() => (
                 <ModalCart product={product}/>
               )}
             </ModalContent>
