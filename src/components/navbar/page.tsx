@@ -22,10 +22,10 @@ const NavbarComponent = () => {
   const menuItems = [
     { name: "Iniciar sesión", path: "/login" },
     { name: "Registrate", path: "/register" },
-    { name: "Favoritos", path: "/favorites" },
+    { name: "Tienda", path: "/products" },
+    { name: "Carrito", path: "/cart" },
     { name: "Sobre nosotros", path: "/aboutUs" },
     { name: "Contáctanos", path: "/contact" },
-    { name: "Salir", path: "/" },
   ];
 
   const buttonText = pathname === "/login" ? "Registrate" : "Iniciar sesión";
@@ -47,18 +47,18 @@ const NavbarComponent = () => {
 
       <NavbarContent className={`hidden md:flex ${styles.navbar_content}`} justify="center">
         <NavbarItem className={styles.container_text}>
+          <Link className={styles.text} color="foreground" href="/products">
+            Tienda
+          </Link>
+        </NavbarItem>
+        <NavbarItem className={styles.container_text}>
+          <Link className={styles.text} color="foreground" href="/cart">
+            Carrito
+          </Link>
+        </NavbarItem>
+        <NavbarItem className={styles.container_text}>
           <Link className={styles.text} color="foreground" href="/contact">
             Contacto
-          </Link>
-        </NavbarItem>
-        <NavbarItem className={styles.container_text}>
-          <Link className={styles.text} color="foreground" href="/products">
-            Productos
-          </Link>
-        </NavbarItem>
-        <NavbarItem className={styles.container_text}>
-          <Link className={styles.text} color="foreground" href="/favorites">
-            Favoritos
           </Link>
         </NavbarItem>
       </NavbarContent>

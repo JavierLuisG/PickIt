@@ -18,9 +18,9 @@ const FooterComponent = () => {
           <article className={`${styles.column}`}>
             <div className={`${styles.quick_links}`}>
               <Link href="/aboutUs">Sobre Nosotros</Link>
-              <Link href="/products">Productos</Link>
-              <Link href="/favorites">Favoritos</Link>
-              <Link href="/tyc">Terminos y condiciones</Link>
+              <Link href="/products">Tienda</Link>
+              <Link href="/cart">Carrito</Link>
+              <Link href="/tyc">Términos y condiciones</Link>
               <Link href="/contact">Contacto</Link>
             </div>
           </article>
