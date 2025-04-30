@@ -56,21 +56,21 @@ const CardComponent = ({ product }: CardComponentProps) => {
           >
             Agregar al carrito
           </Button>
-          <Modal
-            className={styles.modal}
-            backdrop="opaque"
-            isOpen={isOpen}
-            onClose={onClose}
-            size="4xl"
-            radius="none"
-          >
-            <ModalContent>
-              {() => (
-                <ModalCart product={product}/>
-              )}
-            </ModalContent>
-          </Modal>
         </div>
+        <Modal
+          className={styles.modal}
+          backdrop="opaque"
+          isOpen={isOpen}
+          onClose={onClose}
+          size="4xl"
+          radius="none"
+        >
+          <ModalContent>
+            {() => (
+              <ModalCart product={product} />
+            )}
+          </ModalContent>
+        </Modal>
       </div>
     </section >
   );
