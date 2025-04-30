@@ -61,7 +61,6 @@ const CardComponent = ({ product }: CardComponentProps) => {
         </div>
       </section >
       <Modal
-        className={styles.modal}
         backdrop="opaque"
         isOpen={isOpen}
         onClose={onClose}
