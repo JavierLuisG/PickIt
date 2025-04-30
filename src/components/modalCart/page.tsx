@@ -16,6 +16,7 @@ type Producto = {
 
 type CardComponentProps = {
   product: Producto;
+  onClose: () => void;
 };
 
 const ModalCartComponent = ({ product }: CardComponentProps) => {

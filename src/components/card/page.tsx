@@ -30,49 +30,49 @@ const CardComponent = ({ product }: CardComponentProps) => {
   };
 
   return (
-    <section className={styles.card_section}>
-      <Image
-        isZoomed
-        alt="HeroUI Fruit Image with Zoom"
-        radius="none"
-        src={product.image}
-      />
-      <div className={styles.card_content}>
-        <div className={styles.info_content}>
-          <h2 className={styles.title}>
-            {product.title}
-          </h2>
-          <hr aria-orientation="horizontal" className={styles.hr_line} />
-          <p className={styles.price}>
-            $ {product.price}
-          </p>
-        </div>
-        <div className={styles.card_btn}>
-          <Button
-            className={styles.btn}
-            radius="none"
-            as={Link}
-            onPress={() => handleOpen()}
-          >
-            Agregar al carrito
-          </Button>
-        </div>
-        <Modal
-          className={styles.modal}
-          backdrop="opaque"
-          isOpen={isOpen}
-          onClose={onClose}
-          size="4xl"
+    <>
+      <section className={styles.card_section}>
+        <Image
+          isZoomed
+          alt="HeroUI Fruit Image with Zoom"
           radius="none"
-        >
-          <ModalContent>
-            {() => (
-              <ModalCart product={product} />
-            )}
-          </ModalContent>
-        </Modal>
-      </div>
-    </section >
+          src={product.image}
+        />
+        <div className={styles.card_content}>
+          <div className={styles.info_content}>
+            <h2 className={styles.title}>
+              {product.title}
+            </h2>
+            <hr aria-orientation="horizontal" className={styles.hr_line} />
+            <p className={styles.price}>
+              $ {product.price}
+            </p>
+          </div>
+          <div className={styles.card_btn}>
+            <Button
+              className={styles.btn}
+              radius="none"
+              as={Link}
+              onPress={() => handleOpen()}
+            >
+              Agregar al carrito
+            </Button>
+          </div>
+        </div>
+      </section >
+      <Modal
+        className={styles.modal}
+        backdrop="opaque"
+        isOpen={isOpen}
+        onClose={onClose}
+        size="4xl"
+        radius="none"
+      >
+        <ModalContent>
+          {(onClose) => (<ModalCart product={product} onClose={onClose} />)}
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 
