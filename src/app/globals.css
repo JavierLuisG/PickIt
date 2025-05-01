@@ -42,3 +42,23 @@
   padding: 0;
   margin: 0;
 }
+
+/* --- SOLUCIÓN PARA EL MODAL EN DISPOSITIVOS MÓVILES --- */
+[data-slot="overlay"] {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10000 !important;
+}
+
+[data-slot="content"] {
+  position: fixed !important;
+  top: 5% !important;
+  left: 5% !important;
+  right: 5% !important;
+  z-index: 10001 !important;
+  background: white;
+  border-radius: 8px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 1em;
+}
