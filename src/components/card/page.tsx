@@ -1,7 +1,6 @@
 "use client";
 
 import styles from "./page.module.css";
-import ModalCart from "../../components/modalCart/page";
 import {
   Image,
   Link,
