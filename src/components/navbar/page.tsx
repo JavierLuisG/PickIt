@@ -10,10 +10,12 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   Link,
-  Button,
+  Badge,
 } from "@heroui/react";
 import { usePathname } from "next/navigation";
 import styles from "../navbar/page.module.css";
+import Profile from "../../assets/icons/profile.svg";
+import Cart from "../../assets/icons/cart.svg";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -64,15 +66,23 @@ const NavbarComponent = () => {
       </NavbarContent>
       <NavbarContent className={`hidden md:flex ${styles.navbar_content}`} justify="end">
         <NavbarItem className={styles.container_btn_navbar}>
-          <Button
+          <Profile className={styles.icon_profile} />
+          <Link
             className={styles.btn_navbar}
-            radius="full"
-            as={Link}
-            color="secondary"
             href={buttonHref}
+            color="secondary"
           >
             {buttonText}
-          </Button>
+          </Link>
+          <Badge
+            content="5"
+            shape="circle"
+            className={styles.badge_cart}
+          >
+            <Link href="/cart">
+              <Cart className={styles.icon_cart} />
+            </Link>
+          </Badge>
         </NavbarItem>
       </NavbarContent>
       <NavbarMenuToggle
