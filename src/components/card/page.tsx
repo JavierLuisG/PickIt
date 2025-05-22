@@ -26,10 +26,6 @@ type CardComponentProps = {
 const CardComponent = ({ product }: CardComponentProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleOpen = () => {
-    onOpen();
-  };
-
   return (
     <>
       <section className={styles.card_section}>
@@ -54,7 +50,7 @@ const CardComponent = ({ product }: CardComponentProps) => {
               className={styles.btn}
               radius="none"
               as={Link}
-              onPress={() => handleOpen()}
+              onPress={onOpen}
             >
               Agregar al carrito
             </Button>
