@@ -1,3 +1,9 @@
+.container_layout {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+
 .home_container {
   display: flex;
   flex-direction: column;

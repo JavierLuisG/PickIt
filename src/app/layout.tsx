@@ -4,6 +4,7 @@ import Providers from "./providers";
 import { ContextGlobalProvider } from "../context/globalContext";
 import NavbarComponent from "../components/navbar/page";
 import FooterComponent from "../components/footer/page";
+import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "PickIt",
@@ -16,9 +17,11 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
       <body className="font-sans">
         <ContextGlobalProvider>
           <Providers>
-            <NavbarComponent />
-            {children}
-            <FooterComponent />
+            <div className={styles.container_layout}>
+              <NavbarComponent />
+              {children}
+              <FooterComponent />
+            </div>
           </Providers>
         </ContextGlobalProvider>
       </body>
