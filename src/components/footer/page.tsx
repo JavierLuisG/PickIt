@@ -2,6 +2,8 @@
 
 import styles from "../footer/page.module.css";
 import Link from "next/link";
+import Github from "../../assets/icons/github.svg";
+import Linkedin from "../../assets/icons/linkedin.svg";
 
 const FooterComponent = () => {
   return (
@@ -39,14 +41,14 @@ const FooterComponent = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img className={`${styles.img}`} src="/linkedin.svg" alt="LinkedIn" />
+                <Linkedin className={styles.img} />
               </Link>
               <Link
                 href="https://github.com/JavierLuisG"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img className={`${styles.img}`} src="/github.svg" alt="GitHub" />
+                <Github className={styles.img} />
               </Link>
             </div>
           </article>

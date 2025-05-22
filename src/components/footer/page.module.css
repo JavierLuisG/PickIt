@@ -61,6 +61,7 @@
 .img {
   width: 1.5em;
   transition: transform 0.3s ease;
+  fill: var(--color-purple-900);
 }
 
 .img:hover {

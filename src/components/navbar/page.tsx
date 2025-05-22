@@ -52,8 +52,8 @@ const NavbarComponent = () => {
           </Link>
         </NavbarItem>
         <NavbarItem className={styles.container_text}>
-          <Link className={styles.text} color="foreground" href="/cart">
-            Carrito
+          <Link className={styles.text} color="foreground" href="/aboutUs">
+            Acerca de
           </Link>
         </NavbarItem>
         <NavbarItem className={styles.container_text}>
