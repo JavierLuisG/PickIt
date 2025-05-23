@@ -85,6 +85,19 @@ const NavbarComponent = () => {
           </Badge>
         </NavbarItem>
       </NavbarContent>
+      <NavbarContent className={`flex md:hidden ${styles.navbar_content}`} justify="end">
+        <NavbarItem className={styles.container_btn_navbar}>
+          <Badge
+            content="5"
+            shape="circle"
+            className={styles.badge_cart}
+          >
+            <Link href="/cart">
+              <Cart className={styles.icon_cart} />
+            </Link>
+          </Badge>
+        </NavbarItem>
+      </NavbarContent>
       <NavbarMenuToggle
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className={`md:hidden ${styles.menu_toggle}`}

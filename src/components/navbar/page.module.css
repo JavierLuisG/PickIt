@@ -126,4 +126,8 @@
   .navbar_container {
     height: 100%;
   }
+
+  .icon_cart {
+    width: 2em;
+  }
 }
