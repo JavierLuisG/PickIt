@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Providers from "./providers";
 import { ContextGlobalProvider } from "../context/globalContext";
+import { CartProvider } from "../context/cartContext";
 import NavbarComponent from "../components/navbar/page";
 import FooterComponent from "../components/footer/page";
 import styles from "./page.module.css";
@@ -16,13 +17,15 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
     <html lang="en">
       <body className="font-sans">
         <ContextGlobalProvider>
-          <Providers>
-            <div className={styles.container_layout}>
-              <NavbarComponent />
-              {children}
-              <FooterComponent />
-            </div>
-          </Providers>
+          <CartProvider>
+            <Providers>
+              <div className={styles.container_layout}>
+                <NavbarComponent />
+                {children}
+                <FooterComponent />
+              </div>
+            </Providers>
+          </CartProvider>
         </ContextGlobalProvider>
       </body>
     </html>

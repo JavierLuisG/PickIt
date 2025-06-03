@@ -16,10 +16,14 @@ import { usePathname } from "next/navigation";
 import styles from "../navbar/page.module.css";
 import Profile from "../../assets/icons/profile.svg";
 import Cart from "../../assets/icons/cart.svg";
+import { useCart } from "../../context/cartContext";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
+  const { countCart } = useCart();
+
+  const countProductsCart = countCart();
 
   const menuItems = [
     { name: "Iniciar sesión", path: "/login" },
@@ -75,7 +79,7 @@ const NavbarComponent = () => {
             {buttonText}
           </Link>
           <Badge
-            content="5"
+            content={countProductsCart.toString()}
             shape="circle"
             className={styles.badge_cart}
           >
@@ -88,7 +92,7 @@ const NavbarComponent = () => {
       <NavbarContent className={`flex md:hidden ${styles.navbar_content}`} justify="end">
         <NavbarItem className={styles.container_btn_navbar}>
           <Badge
-            content="5"
+            content={countProductsCart.toString()}
             shape="circle"
             className={styles.badge_cart}
           >

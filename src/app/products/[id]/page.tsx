@@ -8,20 +8,18 @@ import {
 } from "@heroui/react";
 import mockProducts from "../../../../mocks/products.json";
 import { useParams } from "next/navigation";
+import { useCart } from "../../../context/cartContext";
 
 const ProductDetail = () => {
   const params = useParams();
   const id = Number(params.id);
+  const { addToCart } = useCart();
 
   const product = mockProducts.find((item) => item.id === id);
 
   if (!product) {
     return <div className={styles.error}>Producto no encontrado</div>;
   }
-
-  const handleClick = () => {
-    // todo: Implementar la lógica para agregar el producto al carrito
-  };
 
   return (
     <div className={styles.select_container}>
@@ -48,7 +46,7 @@ const ProductDetail = () => {
               radius="none"
               as={Link}
               href={`/products`}
-              onPress={() => handleClick()}
+              onPress={() => addToCart(product)}
             >
               Agregar al carrito
             </Button>
