@@ -3,54 +3,63 @@
     "id": 1,
     "title": "Producto 1",
     "price": 100000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 2,
     "title": "Producto 2",
     "price": 200000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 3,
     "title": "Producto 3",
     "price": 300000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 4,
     "title": "Producto 4",
     "price": 400000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 5,
     "title": "Producto 5",
     "price": 500000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 6,
     "title": "Producto 6",
     "price": 600000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 7,
     "title": "Producto 7",
     "price": 700000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 8,
     "title": "Producto 8",
     "price": 800000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   },
   {
     "id": 9,
     "title": "Producto 9",
     "price": 900000,
-    "image": "/images/img_person.jpg"
+    "image": "/images/img_person.jpg",
+    "description": "Este producto de alta calidad ha sido diseñado para quienes buscan lo mejor. Fabricado con materiales de primera, combina rendimiento, durabilidad y estilo en una sola experiencia. Ideal para quienes valoran la eficiencia y la innovación, destaca en su categoría por ofrecer resultados superiores y una experiencia única desde el primer uso."
   }
 ]
