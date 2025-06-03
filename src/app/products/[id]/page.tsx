@@ -6,21 +6,25 @@ import {
   Link,
   Button,
 } from "@heroui/react";
+import mockProducts from "../../../../mocks/products.json";
+import { useParams } from "next/navigation";
 
-type Producto = {
-  id: number;
-  title: string;
-  price: number;
-  image: string;
-};
+const ProductDetail = () => {
+  const params = useParams();
+  const id = Number(params.id);
 
-type CardComponentProps = {
-  product: Producto;
-};
+  const product = mockProducts.find((item) => item.id === id);
 
-const CardComponent = ({ product }: CardComponentProps) => {
+  if (!product) {
+    return <div className={styles.error}>Producto no encontrado</div>;
+  }
+
+  const handleClick = () => {
+    // todo: Implementar la lógica para agregar el producto al carrito
+  };
+
   return (
-    <>
+    <div className={styles.select_container}>
       <section className={styles.card_section}>
         <Image
           isZoomed
@@ -43,15 +47,16 @@ const CardComponent = ({ product }: CardComponentProps) => {
               className={styles.btn}
               radius="none"
               as={Link}
-              href={`/products/${product.id}`}
+              href={`/products`}
+              onPress={() => handleClick()}
             >
-              Ver detalles
+              Agregar al carrito
             </Button>
           </div>
         </div>
       </section >
-    </>
+    </div>
   );
 };
 
-export default CardComponent;
+export default ProductDetail;
