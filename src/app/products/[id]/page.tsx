@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import {
   Image,
-  Link,
   Button,
 } from "@heroui/react";
 import mockProducts from "../../../../mocks/products.json";
