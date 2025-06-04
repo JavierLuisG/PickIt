@@ -9,16 +9,23 @@ import {
 import mockProducts from "../../../../mocks/products.json";
 import { useParams } from "next/navigation";
 import { useCart } from "../../../context/cartContext";
+import { useRouter } from "next/navigation";
 
 const ProductDetail = () => {
   const params = useParams();
   const id = Number(params.id);
   const { addToCart } = useCart();
+  const router = useRouter();
 
   const product = mockProducts.find((item) => item.id === id);
 
   if (!product) {
     return <div className={styles.error}>Producto no encontrado</div>;
+  }
+
+  const handleClick = () => {
+    addToCart(product);
+    router.push("/products");
   }
 
   return (
@@ -44,9 +51,7 @@ const ProductDetail = () => {
             <Button
               className={styles.btn}
               radius="none"
-              as={Link}
-              href={`/products`}
-              onPress={() => addToCart(product)}
+              onPress={() => handleClick()}
             >
               Agregar al carrito
             </Button>
