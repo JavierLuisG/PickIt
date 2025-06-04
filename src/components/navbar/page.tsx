@@ -26,11 +26,10 @@ const NavbarComponent = () => {
   const countProductsCart = countCart();
 
   const menuItems = [
-    { name: "Iniciar sesión", path: "/login" },
-    { name: "Registrate", path: "/register" },
     { name: "Tienda", path: "/products" },
-    { name: "Carrito", path: "/cart" },
+    { name: "Favoritos", path: "/favorites" },
     { name: "Sobre nosotros", path: "/aboutUs" },
+    { name: "Términos y condiciones", path: "/tyc"},
     { name: "Contáctanos", path: "/contact" },
   ];
 
@@ -104,9 +103,19 @@ const NavbarComponent = () => {
       </NavbarContent>
       <NavbarMenuToggle
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        className={`md:hidden ${styles.menu_toggle}`}
+        className={`md:hidden`}
       />
       <NavbarMenu className={styles.menu_container}>
+        <div className={styles.profile_menu}>
+          <Profile className={styles.icon_profile_menu} />
+          <Link
+            className={styles.btn_navbar_menu}
+            href={buttonHref}
+            color="secondary"
+          >
+            {buttonText}
+          </Link>
+        </div>
         {menuItems.map((item, index) => (
           <NavbarMenuItem className={styles.container_menu_item} key={`${item.name}-${index}`}>
             <div>
