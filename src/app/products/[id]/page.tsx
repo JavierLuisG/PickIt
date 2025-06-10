@@ -2,13 +2,13 @@
 
 import styles from "./page.module.css";
 import {
-  Image,
-  Button,
+  Image
 } from "@heroui/react";
 import mockProducts from "../../../../mocks/products.json";
 import { useParams } from "next/navigation";
 import { useCart } from "../../../context/cartContext";
 import { useRouter } from "next/navigation";
+import Favorite from "../../../assets/icons/favorite.svg";
 
 const ProductDetail = () => {
   const params = useParams();
@@ -22,41 +22,74 @@ const ProductDetail = () => {
     return <div className={styles.error}>Producto no encontrado</div>;
   }
 
-  const handleClick = () => {
+  const handleClickCart = () => {
     addToCart(product);
     router.push("/products");
   }
 
+  const handleClickFav = () => {
+    // addToFav(product);
+    router.push("/products");
+  }
+
+  const handleClickBuy = () => {
+    addToCart(product);
+    router.push("/cart");
+  }
+
   return (
     <div className={styles.select_container}>
-      <section className={styles.card_section}>
+      <section className={styles.first_section}>
         <Image
           isZoomed
           alt="Product image"
           radius="none"
           src={product.image}
         />
-        <div className={styles.card_content}>
-          <div className={styles.info_content}>
-            <h2 className={styles.title}>
-              {product.title}
-            </h2>
-            <hr aria-orientation="horizontal" className={styles.hr_line} />
-            <p className={styles.price}>
-              $ {product.price}
-            </p>
-          </div>
-          <div className={styles.card_btn}>
-            <Button
-              className={styles.btn}
-              radius="none"
-              onPress={() => handleClick()}
+
+      </section>
+      <section className={styles.second_section}>
+        <article className={styles.info_content}>
+          <h2 className={styles.title}>
+            {product.title}
+          </h2>
+          <p className={styles.sku}>
+            {product.sku}
+          </p>
+          <p className={styles.price}>
+            $ {product.price}
+          </p>
+        </article>
+        <article className={styles.description}>
+          <p>
+            {product.description}
+          </p>
+        </article>
+        <article className={styles.btns_container}>
+          <div className={styles.btn_top}>
+            <button
+              className={styles.btn_cart}
+              onClick={() => handleClickCart()}
             >
               Agregar al carrito
-            </Button>
+            </button>
+            <button
+              className={styles.btn_fav}
+              onClick={() => handleClickFav()}
+            >
+              <Favorite className={styles.icon_favs} />
+            </button>
           </div>
-        </div>
-      </section >
+          <div className={styles.btn_bottom}>
+            <button
+              className={styles.btn_buy}
+              onClick={() => handleClickBuy()}
+            >
+              Realizar compra
+            </button>
+          </div>
+        </article>
+      </section>
     </div>
   );
 };
