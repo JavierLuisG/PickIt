@@ -5,7 +5,7 @@
   background-color: var(--color-background);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .first_section {

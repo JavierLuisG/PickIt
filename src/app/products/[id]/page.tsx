@@ -9,6 +9,7 @@ import { useParams } from "next/navigation";
 import { useCart } from "../../../context/cartContext";
 import { useRouter } from "next/navigation";
 import Favorite from "../../../assets/icons/favorite.svg";
+import AccordionComponent from "../../../components/accordionProduct/page";
 
 const ProductDetail = () => {
   const params = useParams();
@@ -46,7 +47,6 @@ const ProductDetail = () => {
           radius="none"
           src={product.image}
         />
-
       </section>
       <section className={styles.second_section}>
         <article className={styles.info_content}>
@@ -58,11 +58,6 @@ const ProductDetail = () => {
           </p>
           <p className={styles.price}>
             $ {product.price}
-          </p>
-        </article>
-        <article className={styles.description}>
-          <p>
-            {product.description}
           </p>
         </article>
         <article className={styles.btns_container}>
@@ -88,6 +83,9 @@ const ProductDetail = () => {
               Realizar compra
             </button>
           </div>
+        </article>
+        <article className={styles.description}>
+          <AccordionComponent />
         </article>
       </section>
     </div>
