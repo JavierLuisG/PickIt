@@ -176,14 +176,35 @@
 }
 
 @media (min-width: 769px) {
-
   .modal {
     max-width: 40em;
   }
 }
 
 @media (max-width: 768px) {
+
+  :is(.select_container,
+    .first_section,
+    .description p,
+    .second_section,
+    .info_content,
+    .title,
+    .sku,
+    .price,
+    .btns_container,
+    .btn_top,
+    .btn_cart,
+    .btn_fav,
+    .btn_bottom,
+    .btn_buy,
+    .modal) {
+    font-size: clamp(1.4rem, 1vw + 0.5rem, 4rem);
+  }
+
   .select_container {
     flex-direction: column;
+    gap: 2em;
+    padding: 2em 1em;
+    align-items: center;
   }
 }

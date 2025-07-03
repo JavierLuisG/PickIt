@@ -82,7 +82,7 @@
   .card_btn,
   .btn,
   .modal) {
-  font-size: clamp(1rem, 1vw + 0.5rem, 4rem);
+  font-size: clamp(1.3rem, 1vw + 0.5rem, 4rem);
 }
 
 @media (min-width: 769px) {
